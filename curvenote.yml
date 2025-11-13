@@ -7,7 +7,11 @@ project:
   # keywords: []
   # authors: []
   # github:
-  # To autogenerate a Table of Contents, run "myst init --write-toc"
+  toc:
+    - file: index.md
+    - file: mission.md
+    - file: research.md
+    - file: people.md
 site:
   template: book-theme
   nav:
