@@ -1,0 +1,11 @@
+name: Update Landing Content on Curvenote
+on:
+  push:
+    branches: ['main']
+jobs:
+  journal-draft:
+    uses: curvenote/actions/.github/workflows/push.yml@v1
+    with:
+      landing-content: curious-beams
+    secrets:
+      CURVENOTE: ${{ secrets.CURVENOTE_TOKEN }}
