@@ -11,6 +11,7 @@ project:
     - file: index.md
     - file: mission.md
     - file: research.md
+    - file: articles.md
     - file: people.md
 site:
   template: book-theme
