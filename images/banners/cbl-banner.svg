@@ -1,0 +1,110 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg id="Layer_1" xmlns="http://www.w3.org/2000/svg" version="1.1" viewBox="0 0 675.9 250">
+  <!-- Generator: Adobe Illustrator 29.8.1, SVG Export Plug-In . SVG Version: 2.1.1 Build 2)  -->
+  <defs>
+    <style>
+      .st0 {
+        stroke-width: .8px;
+      }
+
+      .st0, .st1, .st2, .st3 {
+        fill: none;
+        stroke: #0cf;
+      }
+
+      .st1, .st3 {
+        stroke-width: .8px;
+      }
+
+      .st4 {
+        fill-opacity: .5;
+      }
+
+      .st4, .st5, .st6, .st7, .st8, .st9, .st10, .st11, .st12 {
+        fill: #0cf;
+      }
+
+      .st2 {
+        stroke-miterlimit: 4.9;
+        stroke-width: 2px;
+      }
+
+      .st13 {
+        fill: #0f2a44;
+      }
+
+      .st6 {
+        opacity: .3;
+      }
+
+      .st6, .st7, .st8, .st9, .st10, .st11, .st12 {
+        isolation: isolate;
+      }
+
+      .st7 {
+        opacity: .2;
+      }
+
+      .st8 {
+        opacity: .5;
+      }
+
+      .st9 {
+        opacity: .6;
+      }
+
+      .st10 {
+        opacity: .4;
+      }
+
+      .st11 {
+        opacity: .7;
+      }
+
+      .st12 {
+        opacity: .8;
+      }
+
+      .st3 {
+        stroke-linecap: round;
+      }
+    </style>
+  </defs>
+  <rect id="rect2" class="st13" x="-16.3" y="-24.6" width="716" height="300"/>
+  <g id="g25">
+    <path id="path12" class="st2" d="M605.9,160c0,26.9-21.9,48.8-49,48.8-27.1,0-49-21.8-49-48.8"/>
+    <circle id="circle12" class="st5" cx="556.9" cy="160" r="2.4"/>
+    <circle id="circle13" class="st12" cx="556.9" cy="169.8" r="1.8"/>
+    <circle id="circle14" class="st9" cx="556.9" cy="179.5" r="1.2"/>
+    <circle id="circle15" class="st10" cx="556.9" cy="189.3" r="1"/>
+    <circle id="circle16" class="st11" cx="547.1" cy="166.1" r="1.8"/>
+    <circle id="circle17" class="st11" cx="566.6" cy="166.1" r="1.8"/>
+    <circle id="circle18" class="st8" cx="538.6" cy="174.7" r="1.2"/>
+    <circle id="circle19" class="st8" cx="575.2" cy="174.7" r="1.2"/>
+    <circle id="circle20" class="st10" cx="530" cy="182" r="1"/>
+    <circle id="circle21" class="st10" cx="583.7" cy="182" r="1"/>
+    <circle id="circle22" class="st6" cx="526.4" cy="172.2" r="1"/>
+    <circle id="circle23" class="st6" cx="587.4" cy="172.2" r="1"/>
+    <circle id="circle24" class="st7" cx="514.2" cy="178.3" r=".7"/>
+    <circle id="circle25" class="st7" cx="599.6" cy="178.3" r=".7"/>
+  </g>
+  <g id="g27">
+    <line id="line25" class="st1" x1="601.9" y1="225" x2="511.9" y2="225"/>
+    <line id="line26" class="st0" x1="601.9" y1="220" x2="601.9" y2="230"/>
+    <line id="line26-3" class="st1" x1="511.9" y1="220" x2="511.9" y2="230"/>
+    <line id="line27" class="st1" x1="556.9" y1="20" x2="556.9" y2="30"/>
+  </g>
+  <g id="g30">
+    <line id="line28" class="st1" x1="497" y1="160.4" x2="497" y2="210.4"/>
+    <line id="line29" class="st1" x1="501.9" y1="160.4" x2="491.9" y2="160.4"/>
+    <line id="line30" class="st1" x1="502" y1="210.4" x2="492" y2="210.4"/>
+  </g>
+  <path id="path117" class="st4" d="M511.9,160h45"/>
+  <path id="path120" class="st3" d="M556.9,35l-47.5,120"/>
+  <path id="path123" class="st3" d="M533.1,155l23.8-120v120"/>
+  <path id="path124" class="st3" d="M556.9,35l47.5,120"/>
+  <path id="path126" class="st3" d="M556.9,35l23.7,120"/>
+  <path id="path128" class="st3" d="M556.9,35l-35.6,120"/>
+  <path id="path130" class="st3" d="M556.9,35l-11.9,120"/>
+  <path id="path133" class="st3" d="M568.7,155l-11.9-120,35.6,120"/>
+</svg>
