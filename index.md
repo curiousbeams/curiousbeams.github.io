@@ -39,3 +39,24 @@ Our goal is to make high-resolution electron microscopy robust and accessible --
 {button}`See All Presentations <presentations.md>`
 
 :::
+
+:::{div .text-center}
+
+**Recent Computational Articles**
+
+:::
+
+```{cn:articles}
+:venue: curious-beams
+:collection: articles
+:limit: 3
+:show-thumbnails:
+:show-date:
+:show-authors:
+```
+
+:::{div .text-center}
+
+{button}`See All Computational Articles <computational-articles.md>`
+
+:::
