@@ -14,9 +14,9 @@ title: Team
 :website: https://gvarnavides.com/
 :reverse:
 
-Georgios Varnavides is Assistant Professor of Imaging Physics at Delft University of Technology, where he leads the Curious Beams Lab.
-He is a lead developer of the widely used open-source electron microscopy analysis packages py4DSTEM and quantEM, and serves as co-editor of Elemental Microscopy, a new open-access, open-science journal dedicated to interactive and reproducible scientific communication in electron microscopy. 
-Before joining TU Delft, he was a Miller Research Fellow at the University of California, Berkeley, where he developed novel methods for low-dose computational electron microscopy.
+Georgios is Assistant Professor of Imaging Physics at Delft University of Technology, where he leads the Curious Beams Lab.
+He is a lead developer of the widely used open-source electron microscopy analysis packages [py4DSTEM](https://github.com/py4dstem/py4DSTEM) and [quantEM](https://github.com/electronmicroscopy/quantem), and serves as co-editor of [Elemental Microscopy](https://www.elementalmicroscopy.org/), a new open-access, open-science journal dedicated to interactive and reproducible scientific communication in microscopy. 
+Before joining TU Delft, he was a Miller Research Fellow at the University of California, Berkeley.
 
 ---
 Select Works:

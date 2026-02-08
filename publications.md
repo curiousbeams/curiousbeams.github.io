@@ -22,7 +22,7 @@ For a likely more up-to-date list, see [Georgios's Google scholar page](https://
 - [Quantitative phase retrieval and characterization of magnetic nanostructures via Lorentz (scanning) transmission electron microscopy](https://doi.org/10.1088/1361-648X/adc6e3)
 - [Accelerating iterative ptychography with an integrated neural network](https://doi.org/10.1111/jmi.13407)
 - [A Practical Guide to Scanning and Transmission Electron Microscopy Simulations](https://doi.org/10.69761/aghr7357)
-- [Streaming Large-Scale Microscopy Data to a Supercomputing Facility](https://doi.org/10.1093/mam/ozae109)
+- [Streaming Large-Scale Microscopy Data to a Supercomputing Facility](https://doi.org/qqvx)
 
 ## 2024
 
