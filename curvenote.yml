@@ -9,17 +9,27 @@ project:
   # github:
   toc:
     - file: index.md
-    - file: mission.md
+    - file: team.md
     - file: research.md
-    - file: articles.md
-    - file: people.md
+    - file: publications.md
+    - file: open-science.md
+    - file: presentations.md
+    - file: computational-articles.md
 site:
   template: book-theme
   nav:
+    - title: Team
+      url: /team
     - title: Research
       url: /research
-    - title: People
-      url: /people
+    - title: Publications
+      url: /publications
+    - title: Open Science
+      url: /open-science
+    - title: Presentations
+      url: /presentations
+    - title: Computational Articles
+      url: /computational-articles
   # options:
   #   favicon: favicon.ico
   #   logo: site_logo.png
