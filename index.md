@@ -7,24 +7,27 @@ site:
 
 :::{hero .col-screen} Curious Beams Lab
 :background-image: ./images/banners/cbl-banner.svg
-:kicker: TU Delft
+:kicker: Delft University of Technology
 :max-width: 100, 80, 50, 50
 :overlay: 80, 30, 30, 20
-:actions: [Recent Research](./articles.md) [Mission](./mission.md)
-We use electron beams and advanced algorithms to image the structure and function of materials at the nanoscale.
+:actions: [Team](./team.md) [Research](./research.md) [Open Science](./open-science.md)
+
+Welcome to the **Curious Beams Lab** -- where we use *electron beams and advanced algorithms* to explore the structure and function of materials at the nanoscale.
+
 :::
 
-Welcome to the Curious Beams Lab!
+We’re part of the [Imaging Physics Department](https://www.tudelft.nl/tnw/over-faculteit/afdelingen/imphys/) at **Delft University of Technology**, and our research lies at the intersection of physics, computation, and materials science.
+Our goal is to make high-resolution electron microscopy robust and accessible -- combining modeling, simulation, and instrumentation to reveal how materials behave, atom by atom.
 
 :::{div .text-center}
 
-**Recent Articles**
+**Recent Presentations**
 
 :::
 
 ```{cn:articles}
 :venue: curious-beams
-:collection: 2025
+:collection: presentations
 :limit: 3
 :show-thumbnails:
 :show-date:
@@ -33,6 +36,6 @@ Welcome to the Curious Beams Lab!
 
 :::{div .text-center}
 
-{button}`Read All Articles <articles.md>`
+{button}`See All Presentations <presentations.md>`
 
 :::
