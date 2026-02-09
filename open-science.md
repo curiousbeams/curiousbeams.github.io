@@ -11,7 +11,7 @@ This page is left as an exercise for the reader!
 :::{any:bundle} https://msa-em.github.io/esm-widgets/observable-notebook.js
 
 {
-     "notebook": "https://api.observablehq.com/@gvarnavi/curious-beams-github-api-widget.js",
+     "notebook": "https://api.observablehq.com/@gvarnavi/curious-beams-github-api-widget.js?v=4",
      "cells": [
         "organizations",
         "githubCardStyles"
