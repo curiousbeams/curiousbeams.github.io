@@ -70,7 +70,7 @@ Selected Works:
 
 :::{person}
 :name: Jianyao Jin
-:position: PhD Researcher (co-advised with [Kees Hagen](https://www.tudelft.nl/tnw/over-faculteit/afdelingen/imphys/about-the-department/hagen-kees))
+:position: PhD Researcher (co-advised with Kees Hagen)
 :pronouns: he/him
 :image: /images/team/JianyaoJin.webp
 :github: jianyaojin
@@ -80,8 +80,7 @@ Selected Works:
 :reverse:
 
 Jianyao started his PhD in April 2024, focusing on improving physics models to more accurately simulate low-energy electron–matter interactions.
-The interaction of sub-100 eV electrons with samples in scanning electron microscopy is not yet fully understood, as conventional SEMs typically operate at kilovolt energies.
-The Nebula simulator of electron–matter interaction incorporates state-of-the-art scattering physics models at the time of its creation, but currently lacks descriptions of key low-energy processes or relies on models whose assumptions break down in this regime.
+The Nebula simulator of electron–matter interaction incorporates advanced scattering physics models, but does not yet capture several important low-energy processes, or relies on models whose assumptions break down in this regime.
 Jianyao has a background in applied physics, with a focus on computational physics and quantum information and quantum internet applications.
 
 :::
