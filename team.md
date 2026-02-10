@@ -67,3 +67,21 @@ Selected Works:
 
 - [Higher order realspace multislice operators](https://github.com/abTEM/abTEM/pull/236)
 :::
+
+:::{person}
+:name: Jianyao Jin
+:position: PhD Researcher (co-advised with [Kees Hagen](https://www.tudelft.nl/tnw/over-faculteit/afdelingen/imphys/about-the-department/hagen-kees))
+:pronouns: he/him
+:image: /images/team/JianyaoJin.webp
+:github: jianyaojin
+:email: j.jin-1@tudelft.nl
+:linkedin: jianyao-j-7349b4116/
+:orcid: 0000-0003-4428-8344
+:reverse:
+
+Jianyao started his PhD in April 2024, focusing on improving physics models to more accurately simulate low-energy electron–matter interactions.
+The interaction of sub-100 eV electrons with samples in scanning electron microscopy is not yet fully understood, as conventional SEMs typically operate at kilovolt energies.
+The Nebula simulator of electron–matter interaction incorporates state-of-the-art scattering physics models at the time of its creation, but currently lacks descriptions of key low-energy processes or relies on models whose assumptions break down in this regime.
+Jianyao has a background in applied physics, with a focus on computational physics and quantum information and quantum internet applications.
+
+:::
