@@ -6,7 +6,7 @@ title: Open Science
 This page is left as an exercise for the reader!
 :::
 
-## Github Organizations 
+<!-- ## Github Organizations 
 
 :::{any:bundle} https://msa-em.github.io/esm-widgets/observable-notebook.js
 :css: ./custom.css
@@ -15,4 +15,4 @@ This page is left as an exercise for the reader!
      "notebook": "https://api.observablehq.com/@gvarnavi/curious-beams-github-api-widget.js?v=4",
      "cells": ["organizations"]
 }
-:::
+::: -->
