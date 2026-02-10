@@ -13,8 +13,6 @@ This page is left as an exercise for the reader!
 
 {
      "notebook": "https://api.observablehq.com/@gvarnavi/curious-beams-github-api-widget.js?v=4",
-     "cells": [
-        "organizations",
-     ]
+     "cells": ["organizations"]
 }
 :::
