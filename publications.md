@@ -3,7 +3,7 @@ title: Publications
 ---
 
 :::{warning} _Last updated: 2026 Feb 08_
-For a likely more up-to-date list, see [Georgios's Google scholar page](https://scholar.google.com/citations?user=zWvoz5YAAAAJ&hl=en)
+For a likely more up-to-date list, see [Georgios's Google scholar page](https://scholar.google.com/citations?user=zWvoz5YAAAAJ&hl=en).
 :::
 
 ## 2026
