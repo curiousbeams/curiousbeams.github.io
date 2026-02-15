@@ -6,13 +6,13 @@ title: Open Science
 This page is left as an exercise for the reader!
 :::
 
-<!-- ## Github Organizations 
 
-:::{any:bundle} https://msa-em.github.io/esm-widgets/observable-notebook.js
-:css: ./custom.css
+:::{any:bundle} https://curiousbeams.github.io/esm-widgets/github-api-widget/github-api-widget.js
 
 {
-     "notebook": "https://api.observablehq.com/@gvarnavi/curious-beams-github-api-widget.js?v=4",
-     "cells": ["organizations"]
+     "organizations": ["curiousbeams", "msa-em"],
+     "repos":["electronmicroscopy/quantem","abtem/abtem","libertem/libertem-parallax"],
+     <!-- "css": "https://curiousbeams.github.io/esm-widgets/github-api-widget/github-api-widget.css" -->
 }
-::: -->
+
+::: 
