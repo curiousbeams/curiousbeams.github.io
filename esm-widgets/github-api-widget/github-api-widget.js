@@ -17,25 +17,24 @@ function htm(strings, ...values) {
 // Icon helper - now creates both light and dark mode versions
 function icon(name, size = 16) {
   const container = document.createElement('span');
-  container.style.display = 'inline-block';
+  container.style.display = 'inline-flex';
   container.style.verticalAlign = 'text-bottom';
+  container.style.alignItems = 'center';
   
   // Light mode icon (black)
   const imgLight = document.createElement('img');
   imgLight.src = `https://raw.githubusercontent.com/primer/octicons/main/icons/${name}-${size}.svg`;
   imgLight.width = size;
   imgLight.height = size;
-  imgLight.style.verticalAlign = 'text-bottom';
   imgLight.className = 'dark:hidden';
   imgLight.alt = '';
   
-  // Dark mode icon (white) - using a filter to invert colors
+  // Dark mode icon (white)
   const imgDark = document.createElement('img');
   imgDark.src = `https://raw.githubusercontent.com/primer/octicons/main/icons/${name}-${size}.svg`;
   imgDark.width = size;
   imgDark.height = size;
-  imgDark.style.verticalAlign = 'text-bottom';
-  imgDark.style.filter = 'invert(1) brightness(2)';
+  imgDark.style.filter = 'invert(1)';
   imgDark.className = 'hidden dark:inline-block';
   imgDark.alt = '';
   
@@ -156,7 +155,7 @@ function githubUserCard(userData, maxWidth) {
   
   return githubCard({
     href: userData.html_url,
-    maxWidth: maxWidth || 350,
+    maxWidth: maxWidth || 620,
     content
   });
 }
@@ -210,7 +209,7 @@ function githubRepoCard(repoData, maxWidth) {
   
   return githubCard({
     href: repoData.html_url,
-    maxWidth: maxWidth || 350,
+    maxWidth: maxWidth || 620,
     content
   });
 }
@@ -284,7 +283,7 @@ function githubOrgCard(orgData, stats, maxWidth) {
   
   return githubCard({
     href: orgData.html_url,
-    maxWidth: maxWidth || 350,
+    maxWidth: maxWidth || 620,
     content
   });
 }
@@ -371,6 +370,13 @@ export default {
         .github-card:hover {
           background: rgba(0,0,0,0.02);
         }
+        .dark .github-card,
+        .dark .github-card:link,
+        .dark .github-card:visited,
+        .dark .github-card:hover,
+        .dark .github-card:active {
+          border-color: #444;
+        }
         .dark .github-card:hover {
           background: rgba(255,255,255,0.05);
         }
@@ -385,6 +391,7 @@ export default {
         }
         .github-header img {
           width: 48px;
+          height: 48px;
           border-radius: 50%;
         }
         .github-stats {
@@ -392,8 +399,19 @@ export default {
           justify-content: space-between;
           margin-top: 1rem;
         }
-        .github-card svg {
-          vertical-align: text-bottom;
+        .github-stats > div {
+          display: flex;
+          align-items: center;
+          gap: 0.25rem;
+        }
+        .github-repos ul {
+          list-style: none;
+        }
+        .github-repos li {
+          display: flex;
+          align-items: center;
+          gap: 0.25rem;
+          margin-bottom: 0.25rem;
         }
       `;
       document.head.appendChild(style);
