@@ -19,7 +19,9 @@ function icon(name, size = 16) {
   const container = document.createElement('span');
   container.style.display = 'inline-flex';
   container.style.alignItems = 'center';
+  container.style.width = `${size}px`;
   container.style.height = `${size}px`;
+  container.style.position = 'relative';
   
   // Light mode icon (black)
   const imgLight = document.createElement('img');
@@ -29,6 +31,7 @@ function icon(name, size = 16) {
   imgLight.className = 'dark:hidden';
   imgLight.alt = '';
   imgLight.style.display = 'block';
+  imgLight.style.position = 'absolute';
   
   // Dark mode icon (white)
   const imgDark = document.createElement('img');
@@ -39,6 +42,7 @@ function icon(name, size = 16) {
   imgDark.className = 'hidden dark:inline-block';
   imgDark.alt = '';
   imgDark.style.display = 'block';
+  imgDark.style.position = 'absolute';
   
   container.appendChild(imgLight);
   container.appendChild(imgDark);
@@ -173,7 +177,7 @@ function githubRepoCard(repoData, maxWidth) {
   const strong = document.createElement('strong');
   strong.textContent = repoData.name;
   const small1 = document.createElement('small');
-  small1.textContent = repoData.owner.login;
+  small1.textContent = ` ${repoData.owner.login}`;
   const br = document.createElement('br');
   const small2 = document.createElement('small');
   small2.textContent = repoData.description || '';
@@ -353,7 +357,7 @@ export default {
       style.textContent = `
         .github-user-grid {
           display: grid;
-          grid-template-columns: ${maxWidth ? `repeat(auto-fill, minmax(${maxWidth}px, 1fr))` : '1fr'};
+          grid-template-columns: ${maxWidth ? `repeat(auto-fill, minmax(350px, 1fr))` : '1fr'};
           gap: 0.75rem;
         }
         .github-card,
