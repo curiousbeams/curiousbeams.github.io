@@ -27,8 +27,6 @@ Selected Works:
 - [Direct imaging and electronic structure modulation of moiré superlattices at the 2D/3D interface](https://doi.org/10.1038/s41467-021-21363-5)
 :::
 
-::::{grid} 1 1 2 2
-
 :::{person}
 :name: Willem P.M. de Kleijne
 :position: PhD Researcher
@@ -98,4 +96,3 @@ Hans started his PhD in June 2024, focusing on modeling charging effects in our 
 His main goal is to produce more reliable simulated SEM images while gaining deeper insight into the underlying physics. 
 This, in turn, enables more accurate interpretation of real SEM images and can be directly applied to improve SEM inspection and metrology.
 :::
-::::
