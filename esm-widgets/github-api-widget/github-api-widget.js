@@ -355,7 +355,7 @@ export default {
       style.textContent = `
         .github-user-grid {
           display: grid;
-          grid-template-columns: ${maxWidth ? `repeat(auto-fill, minmax(${maxWidth}px, 1fr))` : 'repeat(auto-fit, minmax(max(310px, 50%), 1fr))'};
+          grid-template-columns: ${maxWidth ? `repeat(auto-fill, minmax(${maxWidth}px, 1fr))` : 'repeat(auto-fit, minmax(300px, 1fr))'};
           gap: 0.75rem;
         }
         .github-card,
