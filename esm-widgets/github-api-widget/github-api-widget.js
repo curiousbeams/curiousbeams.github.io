@@ -18,8 +18,8 @@ function htm(strings, ...values) {
 function icon(name, size = 16) {
   const container = document.createElement('span');
   container.style.display = 'inline-flex';
-  container.style.verticalAlign = 'text-bottom';
   container.style.alignItems = 'center';
+  container.style.height = `${size}px`;
   
   // Light mode icon (black)
   const imgLight = document.createElement('img');
@@ -28,6 +28,7 @@ function icon(name, size = 16) {
   imgLight.height = size;
   imgLight.className = 'dark:hidden';
   imgLight.alt = '';
+  imgLight.style.display = 'block';
   
   // Dark mode icon (white)
   const imgDark = document.createElement('img');
@@ -37,6 +38,7 @@ function icon(name, size = 16) {
   imgDark.style.filter = 'invert(1)';
   imgDark.className = 'hidden dark:inline-block';
   imgDark.alt = '';
+  imgDark.style.display = 'block';
   
   container.appendChild(imgLight);
   container.appendChild(imgDark);
@@ -96,7 +98,7 @@ function orgStats(orgRepos) {
 }
 
 // Card creation functions
-function githubCard({ href, maxWidth = 620, content }) {
+function githubCard({ href, maxWidth, content }) {
   const a = document.createElement('a');
   a.className = 'github-card';
   a.href = href;
@@ -155,7 +157,7 @@ function githubUserCard(userData, maxWidth) {
   
   return githubCard({
     href: userData.html_url,
-    maxWidth: maxWidth || 620,
+    maxWidth: maxWidth,
     content
   });
 }
@@ -209,7 +211,7 @@ function githubRepoCard(repoData, maxWidth) {
   
   return githubCard({
     href: repoData.html_url,
-    maxWidth: maxWidth || 620,
+    maxWidth: maxWidth,
     content
   });
 }
@@ -283,7 +285,7 @@ function githubOrgCard(orgData, stats, maxWidth) {
   
   return githubCard({
     href: orgData.html_url,
-    maxWidth: maxWidth || 620,
+    maxWidth: maxWidth,
     content
   });
 }
@@ -337,7 +339,7 @@ export default {
     const users = model.get("users") || [];
     const repos = model.get("repos") || [];
     const cssUrl = model.get("css");
-    const maxWidth = model.get("max_width"); // null/undefined means full width
+    const maxWidth = model.get("max_width"); // null/undefined means inherit from container
     
     // Load CSS if provided
     if (cssUrl) {
@@ -346,12 +348,12 @@ export default {
       link.href = cssUrl;
       document.head.appendChild(link);
     } else {
-      // Inject default styles
+// Inject default styles
       const style = document.createElement('style');
       style.textContent = `
         .github-user-grid {
           display: grid;
-          grid-template-columns: repeat(auto-fill, minmax(${maxWidth ? maxWidth + 'px' : '620px'}, 1fr));
+          grid-template-columns: ${maxWidth ? `repeat(auto-fill, minmax(${maxWidth}px, 1fr))` : '1fr'};
           gap: 0.75rem;
         }
         .github-card,
