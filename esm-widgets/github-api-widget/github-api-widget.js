@@ -39,7 +39,7 @@ function icon(name, size = 16) {
   imgDark.width = size;
   imgDark.height = size;
   imgDark.style.filter = 'invert(1)';
-  imgDark.className = 'hidden dark:inline-block';
+  imgDark.className = 'hidden dark:block';
   imgDark.alt = '';
   imgDark.style.display = 'block';
   imgDark.style.position = 'absolute';
@@ -352,7 +352,7 @@ export default {
       link.href = cssUrl;
       document.head.appendChild(link);
     } else {
-// Inject default styles
+      // Inject default styles
       const style = document.createElement('style');
       style.textContent = `
         .github-user-grid {
@@ -403,7 +403,6 @@ export default {
         .github-stats {
           display: flex;
           justify-content: space-between;
-          margin-top: 1rem;
         }
         .github-stats > div {
           display: flex;
@@ -433,7 +432,7 @@ export default {
         orgSection.className = 'github-section';
         
         const orgHeading = document.createElement('h2');
-        orgHeading.textContent = 'Github Organizations';
+        orgHeading.textContent = 'Open-Source Github Organizations';
         orgSection.appendChild(orgHeading);
         
         const orgGrid = await githubOrgGrid(organizations, maxWidth);
@@ -461,7 +460,7 @@ export default {
         repoSection.className = 'github-section';
         
         const repoHeading = document.createElement('h2');
-        repoHeading.textContent = 'Github Repos';
+        repoHeading.textContent = 'Open-Source Github Repositories';
         repoSection.appendChild(repoHeading);
         
         const repoGrid = await githubReposGrid(repos, maxWidth);
