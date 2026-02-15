@@ -30,7 +30,6 @@ function icon(name, size = 16) {
   imgLight.height = size;
   imgLight.className = 'dark:hidden';
   imgLight.alt = '';
-  imgLight.style.display = 'block';
   imgLight.style.position = 'absolute';
   
   // Dark mode icon (white)
@@ -41,7 +40,6 @@ function icon(name, size = 16) {
   imgDark.style.filter = 'invert(1)';
   imgDark.className = 'hidden dark:block';
   imgDark.alt = '';
-  imgDark.style.display = 'block';
   imgDark.style.position = 'absolute';
   
   container.appendChild(imgLight);
