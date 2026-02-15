@@ -14,15 +14,35 @@ function htm(strings, ...values) {
   return html(strings, ...values);
 }
 
-// Icon helper
+// Icon helper - now creates both light and dark mode versions
 function icon(name, size = 16) {
-  const img = document.createElement('img');
-  img.src = `https://raw.githubusercontent.com/primer/octicons/main/icons/${name}-${size}.svg`;
-  img.width = size;
-  img.height = size;
-  img.style.verticalAlign = 'text-bottom';
-  img.alt = '';
-  return img;
+  const container = document.createElement('span');
+  container.style.display = 'inline-block';
+  container.style.verticalAlign = 'text-bottom';
+  
+  // Light mode icon (black)
+  const imgLight = document.createElement('img');
+  imgLight.src = `https://raw.githubusercontent.com/primer/octicons/main/icons/${name}-${size}.svg`;
+  imgLight.width = size;
+  imgLight.height = size;
+  imgLight.style.verticalAlign = 'text-bottom';
+  imgLight.className = 'dark:hidden';
+  imgLight.alt = '';
+  
+  // Dark mode icon (white) - using a filter to invert colors
+  const imgDark = document.createElement('img');
+  imgDark.src = `https://raw.githubusercontent.com/primer/octicons/main/icons/${name}-${size}.svg`;
+  imgDark.width = size;
+  imgDark.height = size;
+  imgDark.style.verticalAlign = 'text-bottom';
+  imgDark.style.filter = 'invert(1) brightness(2)';
+  imgDark.className = 'hidden dark:inline-block';
+  imgDark.alt = '';
+  
+  container.appendChild(imgLight);
+  container.appendChild(imgDark);
+  
+  return container;
 }
 
 // Fetch functions
@@ -77,18 +97,20 @@ function orgStats(orgRepos) {
 }
 
 // Card creation functions
-function githubCard({ href, maxWidth = 360, content }) {
+function githubCard({ href, maxWidth = 620, content }) {
   const a = document.createElement('a');
   a.className = 'github-card';
   a.href = href;
   a.target = '_blank';
   a.rel = 'noopener noreferrer';
-  a.style.maxWidth = `${maxWidth}px`;
+  if (maxWidth) {
+    a.style.maxWidth = `${maxWidth}px`;
+  }
   a.appendChild(content);
   return a;
 }
 
-function githubUserCard(userData) {
+function githubUserCard(userData, maxWidth) {
   const headerDiv = document.createElement('div');
   headerDiv.className = 'github-header';
   
@@ -134,12 +156,12 @@ function githubUserCard(userData) {
   
   return githubCard({
     href: userData.html_url,
-    maxWidth: 350,
+    maxWidth: maxWidth || 350,
     content
   });
 }
 
-function githubRepoCard(repoData) {
+function githubRepoCard(repoData, maxWidth) {
   const headerDiv = document.createElement('div');
   headerDiv.className = 'github-header';
   
@@ -188,12 +210,12 @@ function githubRepoCard(repoData) {
   
   return githubCard({
     href: repoData.html_url,
-    maxWidth: 350,
+    maxWidth: maxWidth || 350,
     content
   });
 }
 
-function githubOrgCard(orgData, stats) {
+function githubOrgCard(orgData, stats, maxWidth) {
   const headerDiv = document.createElement('div');
   headerDiv.className = 'github-header';
   
@@ -262,44 +284,44 @@ function githubOrgCard(orgData, stats) {
   
   return githubCard({
     href: orgData.html_url,
-    maxWidth: 350,
+    maxWidth: maxWidth || 350,
     content
   });
 }
 
 // Grid creation functions
-async function githubUserGrid(usernames) {
+async function githubUserGrid(usernames, maxWidth) {
   const users = await fetchGithubUsers(usernames);
   const grid = document.createElement('div');
   grid.className = 'github-user-grid';
   
   users.forEach((u) => {
-    grid.appendChild(githubUserCard(u));
+    grid.appendChild(githubUserCard(u, maxWidth));
   });
   
   return grid;
 }
 
-async function githubReposGrid(reponames) {
+async function githubReposGrid(reponames, maxWidth) {
   const repos = await fetchGithubRepos(reponames);
   const grid = document.createElement('div');
   grid.className = 'github-user-grid';
   
   repos.forEach((u) => {
-    grid.appendChild(githubRepoCard(u));
+    grid.appendChild(githubRepoCard(u, maxWidth));
   });
   
   return grid;
 }
 
-async function githubOrgGrid(orgnames) {
+async function githubOrgGrid(orgnames, maxWidth) {
   const orgs = await fetchGithubOrganizations(orgnames);
   const stats = await fetchGithubOrgStats(orgnames);
   const grid = document.createElement('div');
   grid.className = 'github-user-grid';
   
   orgs.forEach((org, i) => {
-    grid.appendChild(githubOrgCard(org, stats[i]));
+    grid.appendChild(githubOrgCard(org, stats[i], maxWidth));
   });
   
   return grid;
@@ -316,6 +338,7 @@ export default {
     const users = model.get("users") || [];
     const repos = model.get("repos") || [];
     const cssUrl = model.get("css");
+    const maxWidth = model.get("max_width"); // null/undefined means full width
     
     // Load CSS if provided
     if (cssUrl) {
@@ -329,7 +352,7 @@ export default {
       style.textContent = `
         .github-user-grid {
           display: grid;
-          grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
+          grid-template-columns: repeat(auto-fill, minmax(${maxWidth ? maxWidth + 'px' : '620px'}, 1fr));
           gap: 0.75rem;
         }
         .github-card,
@@ -347,6 +370,9 @@ export default {
         }
         .github-card:hover {
           background: rgba(0,0,0,0.02);
+        }
+        .dark .github-card:hover {
+          background: rgba(255,255,255,0.05);
         }
         .github-card:focus-visible {
           outline: 2px solid #0969da;
@@ -386,7 +412,7 @@ export default {
         orgHeading.textContent = 'Github Organizations';
         orgSection.appendChild(orgHeading);
         
-        const orgGrid = await githubOrgGrid(organizations);
+        const orgGrid = await githubOrgGrid(organizations, maxWidth);
         orgSection.appendChild(orgGrid);
         container.appendChild(orgSection);
       }
@@ -400,7 +426,7 @@ export default {
         userHeading.textContent = 'Github Users';
         userSection.appendChild(userHeading);
         
-        const userGrid = await githubUserGrid(users);
+        const userGrid = await githubUserGrid(users, maxWidth);
         userSection.appendChild(userGrid);
         container.appendChild(userSection);
       }
@@ -414,7 +440,7 @@ export default {
         repoHeading.textContent = 'Github Repos';
         repoSection.appendChild(repoHeading);
         
-        const repoGrid = await githubReposGrid(repos);
+        const repoGrid = await githubReposGrid(repos, maxWidth);
         repoSection.appendChild(repoGrid);
         container.appendChild(repoSection);
       }

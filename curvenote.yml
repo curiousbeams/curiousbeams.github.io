@@ -30,8 +30,6 @@ site:
       url: /presentations
     - title: Computational Articles
       url: /computational-articles
-  options:
-    style:
-      ./custom.css
+  # options:
   #   favicon: favicon.ico
   #   logo: site_logo.png
