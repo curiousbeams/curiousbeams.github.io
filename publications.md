@@ -61,7 +61,7 @@ For a likely more up-to-date list, see [Georgios's Google scholar page](https://
 - [Electron hydrodynamics in anisotropic materials](https://doi.org/10.1038/s41467-020-18553-y)
 - [Catalytically mediated epitaxy of 3D semiconductors on van der Waals substrates](https://doi.org/10.1063/5.0006300)
 - [Magnetothermal Multiplexing for Selective Remote Control of Cell Signaling](https://doi.org/10.1002/adfm.202000577)
-- [Magnetic Vortex Nanodiscs Enable Remote Magnetomechanical Neural Stimulation](https://doi.org/gprfqr)
+- [Magnetic Vortex Nanodiscs Enable Remote Magnetomechanical Neural Stimulation](https://doi.org/10.1021/acsnano.0c00562)
 - [Transgene-free remote magnetothermal regulation of adrenal hormones](https://doi.org/10.1126/sciadv.aaz3734)
 
 ## 2019

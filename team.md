@@ -70,7 +70,7 @@ Selected Works:
 
 :::{person}
 :name: Jianyao Jin
-:position: PhD Researcher (co-advised with Kees Hagen)
+:position: PhD Researcher (co-advised with Kees Hagen and Timon Fliervoet)
 :pronouns: he/him
 :image: /images/team/JianyaoJin.webp
 :github: jianyaojin
@@ -84,3 +84,14 @@ The Nebula simulator of electron–matter interaction incorporates advanced scat
 Jianyao has a background in applied physics, with a focus on computational physics and quantum information and quantum internet applications.
 
 :::
+
+::{person}
+:name: Hans
+:position: PhD Researcher (co-advised with Kees Hagen and Timon Fliervoet)
+:pronouns: he/him
+:email: j.jkeur@tudelft.nl
+:reverse:
+
+Hans started his PhD in June 2024, focusing on modeling charging effects in our Monte Carlo electron–matter simulator, Nebula.
+His main goal is to produce more reliable simulated SEM images while gaining deeper insight into the underlying physics. 
+This, in turn, enables more accurate interpretation of real SEM images and can be directly applied to improve SEM inspection and metrology.
