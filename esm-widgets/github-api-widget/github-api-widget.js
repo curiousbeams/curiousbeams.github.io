@@ -424,13 +424,14 @@ export default {
     container.className = 'github-api-widget-container';
     
     try {
+      
       // Render organizations
       if (organizations && organizations.length > 0) {
         const orgSection = document.createElement('div');
         orgSection.className = 'github-section';
         
         const orgHeading = document.createElement('h2');
-        orgHeading.textContent = 'Open-Source Github Organizations';
+        orgHeading.textContent = 'Open-Source Organizations';
         orgSection.appendChild(orgHeading);
         
         const orgGrid = await githubOrgGrid(organizations, maxWidth);
@@ -438,6 +439,20 @@ export default {
         container.appendChild(orgSection);
       }
       
+      // Render repos
+      if (repos && repos.length > 0) {
+        const repoSection = document.createElement('div');
+        repoSection.className = 'github-section';
+        
+        const repoHeading = document.createElement('h2');
+        repoHeading.textContent = 'Open-Source Repositories';
+        repoSection.appendChild(repoHeading);
+        
+        const repoGrid = await githubReposGrid(repos, maxWidth);
+        repoSection.appendChild(repoGrid);
+        container.appendChild(repoSection);
+      }
+
       // Render users
       if (users && users.length > 0) {
         const userSection = document.createElement('div');
@@ -450,20 +465,6 @@ export default {
         const userGrid = await githubUserGrid(users, maxWidth);
         userSection.appendChild(userGrid);
         container.appendChild(userSection);
-      }
-      
-      // Render repos
-      if (repos && repos.length > 0) {
-        const repoSection = document.createElement('div');
-        repoSection.className = 'github-section';
-        
-        const repoHeading = document.createElement('h2');
-        repoHeading.textContent = 'Open-Source Github Repositories';
-        repoSection.appendChild(repoHeading);
-        
-        const repoGrid = await githubReposGrid(repos, maxWidth);
-        repoSection.appendChild(repoGrid);
-        container.appendChild(repoSection);
       }
       
       el.appendChild(container);
