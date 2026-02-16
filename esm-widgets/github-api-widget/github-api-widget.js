@@ -424,14 +424,14 @@ export default {
     container.className = 'github-api-widget-container';
     
     try {
-      
+
       // Render organizations
       if (organizations && organizations.length > 0) {
         const orgSection = document.createElement('div');
         orgSection.className = 'github-section';
         
         const orgHeading = document.createElement('h2');
-        orgHeading.textContent = 'Open-Source Organizations';
+        orgHeading.textContent = 'Open Source Organizations';
         orgSection.appendChild(orgHeading);
         
         const orgGrid = await githubOrgGrid(organizations, maxWidth);
@@ -445,7 +445,7 @@ export default {
         repoSection.className = 'github-section';
         
         const repoHeading = document.createElement('h2');
-        repoHeading.textContent = 'Open-Source Repositories';
+        repoHeading.textContent = 'Open Source Repositories';
         repoSection.appendChild(repoHeading);
         
         const repoGrid = await githubReposGrid(repos, maxWidth);
