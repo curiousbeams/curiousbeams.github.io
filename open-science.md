@@ -21,7 +21,7 @@ Below are the main open-source organizations and repositories we are actively in
     "electronmicroscopy/quantem",
     "libertem/libertem-parallax",
     "py4dstem/py4dstem",
-    "abtem/abtem",
+    "abtem/abtem"
   ]
 }
 
