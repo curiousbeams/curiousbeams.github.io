@@ -2,6 +2,21 @@
 title: Team
 ---
 
+:::{tip} Open Positions
+:class: dropdown
+
+All formal vacancies for PhD and Postdoctoral researchers are posted on the TU Delft Careers portal and will be highlighted here.
+
+**Prospective Researchers:** If you believe you are an exceptional fit for the group but do not see a current vacancy, you are welcome to email Georgios directly with your CV and a brief cover letter.
+We are often exploring new funding opportunities; however, due to the volume of inquiries, please understand if we cannot provide a detailed personal response to every message.
+
+**BSc & MSc Students:** We are always looking for motivated Applied Sciences students for BEP/MEP projects!
+If you are interested in joining us, please reach out to Georgios to discuss potential topics.
+
+:::
+
+## Principal Investigator
+
 :::{person}
 :name: Georgios Varnavides
 :position: Assistant Professor
@@ -26,6 +41,8 @@ Selected Works:
 - [Low-dose cryo-electron ptychography of proteins at sub-nanometer resolution](https://doi.org/10.1038/s41467-024-52403-5)
 - [Direct imaging and electronic structure modulation of moiré superlattices at the 2D/3D interface](https://doi.org/10.1038/s41467-021-21363-5)
 :::
+
+## Research Team
 
 :::{person}
 :name: Willem P.M. de Kleijne
