@@ -2,16 +2,18 @@
 title: Team
 ---
 
-:::{tip} Open Positions
+:::{note} Open Positions
 :class: dropdown
 
-All formal vacancies for PhD and Postdoctoral researchers are posted on the TU Delft Careers portal and will be highlighted here.
+Formal PhD and Postdoctoral vacancies are listed on the TU Delft Careers portal and will be advertised here.
 
-**Prospective Researchers:** If you believe you are an exceptional fit for the group but do not see a current vacancy, you are welcome to email Georgios directly with your CV and a brief cover letter.
-We are often exploring new funding opportunities; however, due to the volume of inquiries, please understand if we cannot provide a detailed personal response to every message.
+**Fellowships:** We are always interested in supporting and hosting fellowship applications (e.g., MSCA Postdoctoral Fellowships) for candidates with a strong research track record.
 
-**BSc & MSc Students:** We are always looking for motivated Applied Sciences students for BEP/MEP projects!
-If you are interested in joining us, please reach out to Georgios to discuss potential topics.
+**Prospective Researchers:** If you are an exceptional fit but see no open role, feel free to email Georgios with your CV and cover letter.
+We often have funding on the horizon, though please understand if we cannot provide a personal response to every inquiry.
+
+**BSc & MSc Students:** We always welcome Applied Sciences students for BEP/MEP projects.
+Please contact Georgios directly to explore current topics.
 
 :::
 
