@@ -36,7 +36,7 @@ Our goal is to make high-resolution electron microscopy robust and accessible --
 
 :::{div .text-center}
 
-{button}`See All Presentations <presentations.md>`
+{button}`See All Presentations <interactive-content.md#id-presentations>`
 
 :::
 
@@ -57,6 +57,6 @@ Our goal is to make high-resolution electron microscopy robust and accessible --
 
 :::{div .text-center}
 
-{button}`See All Computational Articles <computational-articles.md>`
+{button}`See All Computational Articles <./interactive-content.md#id-computational-articles>`
 
 :::

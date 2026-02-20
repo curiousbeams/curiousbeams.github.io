@@ -13,8 +13,7 @@ project:
     - file: research.md
     - file: publications.md
     - file: open-science.md
-    - file: presentations.md
-    - file: computational-articles.md
+    - file: interactive-content.md
 site:
   template: book-theme
   nav:
@@ -26,10 +25,8 @@ site:
       url: /publications
     - title: Open Science
       url: /open-science
-    - title: Presentations
-      url: /presentations
-    - title: Computational Articles
-      url: /computational-articles
+    - title: Interactive Content
+      url: /interactive-content
   # options:
   #   favicon: favicon.ico
   #   logo: site_logo.png
