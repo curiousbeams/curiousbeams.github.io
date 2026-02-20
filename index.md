@@ -68,7 +68,7 @@ Our goal is to make high-resolution electron microscopy robust and accessible --
 ::::{template:list} news.yml
 :path: news
 :parent: {"type": "grid", "columns": [1,2,2,2]}
-:limit: 3
+:limit: 2
 
 :::{card:blog} {{title}}
 :link: {% if url %}{{url}}{% endif %}
