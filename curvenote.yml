@@ -30,6 +30,5 @@ site:
       url: /interactive-content
     - title: News
       url: /news
-  # options:
-  #   favicon: favicon.ico
-  #   logo: site_logo.png
+  options:
+    hide_footer_links: false
