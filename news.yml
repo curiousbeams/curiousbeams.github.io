@@ -1,4 +1,21 @@
 news:
+  - title: Mathijs successfully defends his BEP thesis
+    url: https://www.linkedin.com/posts/gvarnavides_congratulations-to-mathijs-van-den-doel-on-activity-7412161884210032640-wXtw
+    date: "19 Dec 2025"
+    image: ./images/news/mathijs_bep.jpeg
+    description: |
+      Mathijs successfully defended his Bachelor’s thesis with excellent results.
+      He will continue with the Curious Beams Lab as a research assistant this spring, further developing advanced electron imaging simulations.
+    tags:
+      - personnel
+  - title: Inaugural Curious Beams holiday dinner  
+    date: "15 Dec 2025"
+    image: ./images/news/holiday_dinner_2025.jpeg
+    description: |
+      We hosted the inaugural Curious Beams Lab holiday dinner, celebrating the end of the year together.
+      The evening featured lively discussions, good food, and a spirited game of Hitster -- where Willem staged a remarkable comeback to win the first CBL board game title.
+    tags:
+      - activities
   - title: Willem starts his PhD
     url: https://www.tudelft.nl/2025/tnw/willem-de-kleijne-joined-imphys-as-phd-student
     date: "17 Nov 2025"
