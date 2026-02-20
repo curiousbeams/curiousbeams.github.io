@@ -21,7 +21,7 @@ Our goal is to make high-resolution electron microscopy robust and accessible --
 
 :::{div .text-center}
 
-**Recent Presentations**
+**Recent Interactive Content**
 
 :::
 
@@ -36,13 +36,11 @@ Our goal is to make high-resolution electron microscopy robust and accessible --
 
 :::{div .text-center}
 
-{button}`See All Presentations <interactive-content.md#id-presentations>`
+{button}`See All Presentations <interactive-content.md#presentations>`
 
 :::
 
 :::{div .text-center}
-
-**Recent Computational Articles**
 
 :::
 
@@ -57,6 +55,22 @@ Our goal is to make high-resolution electron microscopy robust and accessible --
 
 :::{div .text-center}
 
-{button}`See All Computational Articles <./interactive-content.md#id-computational-articles>`
+{button}`See All Computational Articles <./interactive-content.md#computational-articles>`
 
 :::
+
+**Recent News**
+::::{template:list} news.yml
+:path: news
+:parent: {"type": "grid", "columns": [1,2,2,2]}
+:limit: 3
+
+:::{card:blog} {{title}}
+:link: {% if url %}{{url}}{% endif %}
+:image: {% if image %}{{image}}{% endif %}
+:date: {% if date %}{{date}}{% endif %}
+:tags: {% if tags %}{{tags.join(',')}}{% endif %}
+
+{% if description -%}{{description}}{%- endif %}
+:::
+::::
