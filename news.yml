@@ -1,38 +1,37 @@
 news:
-  - title: George joins Imaging Physics
-    url: https://www.tudelft.nl/2025/tnw/dr-georgios-varnavides-joins-imphys-faculty-as-assistant-professor
-    date: 2025-09-01
-    image: ./images/banners/cbl-logo.svg
-    description: |
-      George officially joins Imaging Physics in the Faculty of Applied Sciences at TU Delft as an Assistant Professor.
-      This appointment also marks the launch of the Curious Beams Lab, exploring new frontiers in diffractive and electron imaging.
-    tags:
-      - personnel
-  - title: Mathijs starts his BEP thesis
-    url: https://cbl.curve.space/articles/curious-beams-presentation-20260210-direct-ptychography/higher-order-ms
-    date: 2025-10-13
-    image: ./images/banners/cbl-logo.svg
-    description: |
-      Mathijs joins the Curious Beams Lab for his Bachelor’s thesis,
-      where he will develop more accurate multislice algorithms for low-energy S/TEM simulations within the open-source package abTEM.
-    tags:
-      - personnel
-  - title: George gives ImPhys Science Day and FAU Erlangen seminars
-    url: https://www.tudelft.nl/2025/tnw/imphys-science-day-2025
-    date: 2025-11-12
-    image: ./images/news/imphys_science_day_2025.jpg
-    description: |
-      George presented seminars at the FAU Erlangen Materials Science Colloquium and at ImPhys Science Day 2025, 
-      discussing dose-efficient diffractive imaging with electrons and new directions for low-dose phase retrieval.
-    tags:
-      - presentations
   - title: Willem starts his PhD
     url: https://www.tudelft.nl/2025/tnw/willem-de-kleijne-joined-imphys-as-phd-student
-    date: 2025-11-17
+    date: "17 Nov 2025"
     image: ./images/banners/cbl-logo.svg
     description: |
       Willem joins the Curious Beams Lab as a PhD candidate,
       where he will develop coherent diffractive imaging approaches for scanning electron microscopy in both transmission and reflection geometries.
     tags:
       - personnel
-  
+  - title: George gives ImPhys Science Day and FAU Erlangen seminars
+    url: https://www.tudelft.nl/2025/tnw/imphys-science-day-2025
+    date: "12 Nov 2025"
+    image: ./images/news/imphys_science_day_2025.jpg
+    description: |
+      George presented seminars at the FAU Erlangen Materials Science Colloquium and at ImPhys Science Day 2025, 
+      discussing dose-efficient diffractive imaging with electrons and new directions for low-dose phase retrieval.
+    tags:
+      - presentations
+  - title: Mathijs starts his BEP thesis
+    url: https://cbl.curve.space/articles/curious-beams-presentation-20260210-direct-ptychography/higher-order-ms
+    date: "13 Oct 2025"
+    image: ./images/banners/cbl-logo.svg
+    description: |
+      Mathijs joins the Curious Beams Lab for his Bachelor’s thesis,
+      where he will develop more accurate multislice algorithms for low-energy S/TEM simulations within the open-source package abTEM.
+    tags:
+      - personnel
+  - title: George joins Imaging Physics
+    url: https://www.tudelft.nl/2025/tnw/dr-georgios-varnavides-joins-imphys-faculty-as-assistant-professor
+    date: "01 Sep 2025"
+    image: ./images/banners/cbl-logo.svg
+    description: |
+      George officially joins Imaging Physics in the Faculty of Applied Sciences at TU Delft as an Assistant Professor.
+      This appointment also marks the launch of the Curious Beams Lab, exploring new frontiers in diffractive and electron imaging.
+    tags:
+      - personnel
