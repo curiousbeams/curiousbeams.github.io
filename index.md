@@ -79,3 +79,9 @@ Our goal is to make high-resolution electron microscopy robust and accessible --
 {% if description -%}{{description}}{%- endif %}
 :::
 ::::
+
+:::{div .text-center}
+
+{button}`See All News <./news.md>`
+
+:::

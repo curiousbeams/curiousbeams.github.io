@@ -7,6 +7,15 @@ news:
       The CBL stand featured a hands-on demo of the Fourier Atlas kit, illustrating diffraction as a physical analogue of the Fourier transform.
     tags:
       - activities
+  - title: George gives University of Vienna seminar
+    url: https://cbl.curve.space/articles/curious-beams-presentation-20260210-direct-ptychography
+    date: "10 Feb 2026"
+    image: ./images/news/streaming_parallax_placeholder.png
+    description: |
+      George gave a seminar at the Physics of Nanostructured Materials group at the University of Vienna, discussing streaming parallax implementations.
+      The visit also included sampling typical Viennese meals and the refreshing drink, Soda-Zitron!
+    tags:
+      - presentations
   - title: George attends NWO Physics  
     date: "20 Jan 2026"
     image: ./images/news/nwo_physics-2026.jpeg
@@ -48,6 +57,15 @@ news:
       George presented seminars at the FAU Erlangen Materials Science Colloquium and at ImPhys Science Day 2025, 
       discussing dose-efficient diffractive imaging with electrons and new directions for low-dose phase retrieval.
     tags:
+      - presentations
+  - title: George attends Dutch Microscopy Days  
+    date: "27 Oct 2025"
+    image: ./images/news/ssnr_summary_figure.png
+    url: https://gvarnavides.com/2025nemi-day/
+    description: |
+      George attended and presented at the Dutch Microscopy Days in Groningen, discussing information transfer in phase-contrast imaging -- a concept first discovered by Nobel Laureate Fritz Zernike at the University of Groningen.
+    tags:
+      - activities
       - presentations
   - title: Mathijs starts his BEP thesis
     url: https://cbl.curve.space/articles/curious-beams-presentation-20260210-direct-ptychography/higher-order-ms

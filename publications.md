@@ -69,6 +69,3 @@ For a likely more up-to-date list, see [Georgios's Google scholar page](https://
 - [Nonequilibrium phonon transport across nanoscale interfaces](https://doi.org/10.1103/PhysRevB.100.115402)
 - [Strain-programmable fiber-based artificial muscle](https://doi.org/10.1126/science.aaw2502)
 - [Fundamental aspects to localize self-catalyzed III-V nanowires on silicon](https://doi.org/10.1038/s41467-019-08807-9)
-
-:::{bibliography}
-:::
