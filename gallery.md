@@ -7,13 +7,14 @@ title: Gallery
 {
   "images": [
     "https://curiousbeams.github.io/images/news/holiday_dinner_2025.jpeg",
-    "https://curiousbeams.github.io/images/news/nwo_physics-2026.jpeg"
+    "https://curiousbeams.github.io/images/news/nwo_physics-2026.jpeg",
+    "https://curiousbeams.github.io/images/news/mathijs_bep.jpeg"
   ],
   "width": "100%",
-  "height": "500px",
+  "height_ratio": "0.5",
   "object-fit": "cover",
   "type": "loop",
-  "autoplay": false,
+  "autoplay": true,
   "arrows": true,
   "pagination": true
 }

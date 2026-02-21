@@ -58,9 +58,10 @@ export default {
 
     // --- Read model properties ---
     const images    = model.get("images")     || [];
-    const width     = model.get("width")      || "100%";
-    const height    = model.get("height")     || "auto";
-    const objectFit = model.get("object-fit") || "cover";
+    const width       = model.get("width")        || "100%";
+    const height      = model.get("height")      || null;   // explicit CSS height, e.g. "500px"
+    const heightRatio = model.get("height_ratio") ?? null;  // e.g. 0.5 → Splide manages height
+    const objectFit   = model.get("object-fit")  || "cover";
     const type      = model.get("type")       || "loop";   // loop | fade | slide
     const autoplay  = model.get("autoplay")   ?? false;
     const arrows    = model.get("arrows")     ?? true;
@@ -79,7 +80,7 @@ export default {
       }
       #${uid} .splide__slide img {
         width: 100%;
-        height: ${height};
+        height: ${heightRatio != null ? "100%" : (height || "auto")};
         object-fit: ${objectFit};
         display: block;
       }
@@ -135,7 +136,7 @@ export default {
     el.appendChild(section);
 
     // --- Mount Splide ---
-    const splide = new window.Splide(`#${uid}`, {
+    const splideOptions = {
       type,
       perPage,
       gap,
@@ -145,7 +146,11 @@ export default {
       rewind: type !== "loop",
       pauseOnHover: true,
       lazyLoad: "nearby",
-    });
+    };
+    if (heightRatio != null) splideOptions.heightRatio = heightRatio;
+    if (height && heightRatio == null) splideOptions.height = height;
+
+    const splide = new window.Splide(`#${uid}`, splideOptions);
 
     splide.mount();
 
