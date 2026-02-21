@@ -9,7 +9,7 @@ All code developed in our lab is made publicly available through open-source rep
 Beyond sharing code, we also provide [interactive preprints](./computational-articles.md) of our work that allow readers to explore results, test parameters, and engage directly with our research findings.
 Below are the main open-source organizations and repositories we are actively involved in:
 
-:::{any:bundle} https://curiousbeams.github.io/esm-widgets/github-api-widget/github-api-widget.js
+:::{any:bundle} https://curiousbeams.github.io/esm-widgets/github-api-widget.js
 :class: w-full
 
 {
