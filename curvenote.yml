@@ -15,6 +15,7 @@ project:
     - file: open-science.md
     - file: interactive-content.md
     - file: news.md
+    - file: gallery.md
 site:
   template: book-theme
   nav:
@@ -30,5 +31,7 @@ site:
       url: /interactive-content
     - title: News
       url: /news
+    - title: Gallery
+      url: /gallery
   options:
     hide_footer_links: false
