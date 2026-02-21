@@ -11,11 +11,9 @@ title: Gallery
     "https://curiousbeams.github.io/images/news/mathijs_bep.jpeg"
   ],
   "width": "100%",
-  "height_ratio": "0.5",
+  "height_ratio": 0.5,
   "object-fit": "cover",
-  "type": "loop",
   "autoplay": true,
-  "arrows": true,
-  "pagination": true
+  "border_radius": "0.75rem"
 }
 :::
