@@ -11,6 +11,6 @@ title: Gallery
     "https://curiousbeams.github.io/images/news/mathijs_bep.jpeg"
   ],
   "height_ratio": 0.5,
-  "border_radius": "0.75rem",
+  "border_radius": "0.75rem"
 }
 :::
