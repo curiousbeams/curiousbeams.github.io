@@ -1,12 +1,12 @@
 news:
-  - title: Curious Beams @ BEP/MEP market  
+  - title: CBL attends BEP/MEP market  
     date: "19 Feb 2026"
     image: ./images/gallery/20260219_bep-mep-market.jpeg
     description: |
       George and Willem represented the Curious Beams Lab at the Applied Physics BEP/MEP market, meeting prospective students and demonstrating the Fourier Atlas kit as a hands-on analogue of the Fourier transform.
     tags:
       - activities
-  - title: Seminar @ University of Vienna
+  - title: University of Vienna Seminar
     url: https://cbl.curve.space/articles/curious-beams-presentation-20260210-direct-ptychography
     date: "10 Feb 2026"
     image: ./images/gallery/presentation-placeholder_streaming-parallax.png
@@ -14,7 +14,7 @@ news:
       George gave a seminar at the University of Vienna’s Physics of Nanostructured Materials group on streaming parallax methods, with time to sample Viennese cuisine and a Soda-Zitron.
     tags:
       - presentations
-  - title: Curious Beams @ NWO Physics  
+  - title: CBL attends NWO Physics  
     date: "20 Jan 2026"
     image: ./images/gallery/20260120_nwo-physics.jpeg
     description: |
@@ -29,7 +29,7 @@ news:
       Mathijs successfully defended his Bachelor’s thesis with excellent results and will continue with the Curious Beams Lab this spring as a research assistant.
     tags:
       - personnel
-  - title: Inaugural Curious Beams holiday dinner  
+  - title: Inaugural CBL holiday dinner  
     date: "15 Dec 2025"
     image: ./images/gallery/20251215_holiday-dinner.jpeg
     description: |
@@ -44,7 +44,7 @@ news:
       Willem started his PhD at the Curious Beams Lab, developing coherent diffractive imaging methods for SEM in both transmission and reflection geometries.
     tags:
       - personnel
-  - title: ImPhys Science Day & FAU seminar
+  - title: ImPhys Science Day
     url: https://www.tudelft.nl/2025/tnw/imphys-science-day-2025
     date: "12 Nov 2025"
     image: ./images/gallery/20251112_imphys-science-day.jpeg
@@ -52,7 +52,7 @@ news:
       George presented seminars at FAU Erlangen and ImPhys Science Day 2025 on dose-efficient diffractive electron imaging and new directions in low-dose phase retrieval.
     tags:
       - presentations
-  - title: Curious Beams @ Nemi Day  
+  - title: CBL attends Nemi Day  
     date: "27 Oct 2025"
     image: ./images/gallery/presentation-placeholder_ssnr-summary.png
     url: https://gvarnavides.com/2025nemi-day/
