@@ -22,9 +22,28 @@ async function ensureSplide() {
         rel: "stylesheet",
         href: SPLIDE_CSS
     });
-    if (!window.Splide) await loadResource("script", {
-        src: SPLIDE_JS
-    });
+    if (!window.Splide) {
+        await loadResource("script", {
+            src: SPLIDE_JS
+        });
+        // onload fires when the script is fetched, but window.Splide may not be
+        // assigned yet if the browser hasn't finished parsing it. Poll briefly.
+        await new Promise((resolve, reject) => {
+            const start = Date.now();
+            const check = () => {
+                if (window.Splide) {
+                    resolve();
+                    return;
+                }
+                if (Date.now() - start > 5000) {
+                    reject(new Error("Splide failed to initialise"));
+                    return;
+                }
+                requestAnimationFrame(check);
+            };
+            check();
+        });
+    }
 }
 
 let _count = 0;
@@ -92,8 +111,20 @@ export default {
       #${uid} .splide__arrow { background: rgba(0,0,0,0.45); opacity: 1; }
       #${uid} .splide__arrow:hover { background: rgba(0,0,0,0.75); }
       #${uid} .splide__arrow svg { fill: #fff; }
-      #${uid} .splide__pagination__page { background: rgba(255,255,255,0.5); }
-      #${uid} .splide__pagination__page.is-active { background: #fff; transform: scale(1.25); }
+      #${uid} .splide__pagination {
+        bottom: 1.25rem;  /* lift above caption bar */
+      }
+      #${uid} .splide__pagination__page {
+        background: rgba(255,255,255,0.5);
+        border: 1.5px solid rgba(0,0,0,0.35);
+        box-shadow: 0 1px 3px rgba(0,0,0,0.4);
+        width: 9px; height: 9px;
+      }
+      #${uid} .splide__pagination__page.is-active {
+        background: #fff;
+        transform: scale(1.25);
+        box-shadow: 0 1px 4px rgba(0,0,0,0.6);
+      }
     `;
         el.appendChild(style);
 
