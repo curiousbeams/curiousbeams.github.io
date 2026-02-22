@@ -86,21 +86,37 @@ Our goal is to make high-resolution electron microscopy robust and accessible --
 
 :::
 
-::::{hero .col-screen} 
-:max-width: 100, 80, 50, 50
-:overlay: 80, 30, 30, 20
+:::{div .text-center}
+
+**Recent Photos**
+
+:::
 
 :::{any:bundle} https://curiousbeams.github.io/esm-widgets/image-carousel.js
 :class: w-full
 {
   "images": [
-    "https://curiousbeams.github.io/images/gallery/20251215_holiday-dinner.jpeg",
-    "https://curiousbeams.github.io/images/gallery/20251219_mathijs-bep.jpeg",
-    "https://curiousbeams.github.io/images/gallery/20260120_nwo-physics.jpeg",
-    "https://curiousbeams.github.io/images/gallery/20260219_bep-mep-market.jpeg"
+    {
+      "src": "https://curiousbeams.github.io/images/gallery/20260120_nwo-physics.jpeg",
+      "caption": "NWO Physics photobooth with ImPhys MInT group members."
+    },
+    {
+      "src": "https://curiousbeams.github.io/images/gallery/20251219_mathijs-bep.jpeg",
+      "caption": "Mathijs during his BEP defense."
+    },
+    {
+      "src": "https://curiousbeams.github.io/images/gallery/20251215_holiday-dinner.jpeg",
+      "caption": "Willem makes a comeback to win inaugural CBL Hitster game"
+    }
   ],
   "height_ratio": 0.6,
-  "border_radius": "0.5rem"
+  "border_radius": "0.5rem",
+  "caption_on_hover": true,
 }
 :::
-::::
+
+:::{div .text-center}
+
+{button}`See Entire Gallery <./gallery.md>`
+
+:::

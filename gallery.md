@@ -6,12 +6,21 @@ title: Gallery
 :class: w-full
 {
   "images": [
-    "https://curiousbeams.github.io/images/gallery/20251215_holiday-dinner.jpeg",
-    "https://curiousbeams.github.io/images/gallery/20251219_mathijs-bep.jpeg",
-    "https://curiousbeams.github.io/images/gallery/20260120_nwo-physics.jpeg",
-    "https://curiousbeams.github.io/images/gallery/20260219_bep-mep-market.jpeg"
+    {
+      "src": "https://curiousbeams.github.io/images/gallery/20260120_nwo-physics.jpeg",
+      "caption": "NWO Physics photobooth with ImPhys MInT group members."
+    },
+    {
+      "src": "https://curiousbeams.github.io/images/gallery/20251219_mathijs-bep.jpeg",
+      "caption": "Mathijs during his BEP defense."
+    },
+    {
+      "src": "https://curiousbeams.github.io/images/gallery/20251215_holiday-dinner.jpeg",
+      "caption": "Willem makes a comeback to win inaugural CBL Hitster game"
+    }
   ],
   "height_ratio": 0.6,
-  "border_radius": "0.5rem"
+  "border_radius": "0.5rem",
+  "caption_on_hover": false,
 }
 :::
