@@ -9,7 +9,7 @@ site:
 :background-image: ./images/banners/cbl-banner.svg
 :kicker: Delft University of Technology
 :max-width: 100, 80, 50, 50
-:overlay: 80, 30, 30, 20
+:overlay: 30
 :actions: [Team](./team.md) [Research](./research.md) [Open Science](./open-science.md)
 
 Welcome to the **Curious Beams Lab** -- where we use *electron beams and advanced algorithms* to explore the structure and function of materials at the nanoscale.
@@ -109,7 +109,7 @@ Our goal is to make high-resolution electron microscopy robust and accessible --
       "caption": "Willem wins inaugural CBL Hitster game."
     }
   ],
-  "height_ratio": 0.6,
+  "height_ratio": 0.4,
   "border_radius": "0.5rem",
   "caption_on_hover": true
 }
