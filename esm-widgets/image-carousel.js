@@ -112,18 +112,17 @@ export default {
       #${uid} .splide__arrow:hover { background: rgba(0,0,0,0.75); }
       #${uid} .splide__arrow svg { fill: #fff; }
       #${uid} .splide__pagination {
-        bottom: 1.25rem;  /* lift above caption bar */
+        bottom: 2rem;  /* lift above caption bar */
       }
       #${uid} .splide__pagination__page {
-        background: rgba(255,255,255,0.5);
-        border: 1.5px solid rgba(0,0,0,0.35);
-        box-shadow: 0 1px 3px rgba(0,0,0,0.4);
+        background: rgba(255,255,255,0.55);
+        box-shadow: 0 0 0 1.5px rgba(0,0,0,0.5), 0 1px 4px rgba(0,0,0,0.5);
         width: 9px; height: 9px;
       }
       #${uid} .splide__pagination__page.is-active {
         background: #fff;
-        transform: scale(1.25);
-        box-shadow: 0 1px 4px rgba(0,0,0,0.6);
+        transform: scale(1.5);
+        box-shadow: 0 0 0 1.5px rgba(0,0,0,0.5), 0 1px 4px rgba(0,0,0,0.5);
       }
     `;
         el.appendChild(style);
