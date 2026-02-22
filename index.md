@@ -85,3 +85,22 @@ Our goal is to make high-resolution electron microscopy robust and accessible --
 {button}`See All News <./news.md>`
 
 :::
+
+::::{hero .col-screen} 
+:max-width: 100, 80, 50, 50
+:overlay: 80, 30, 30, 20
+
+:::{any:bundle} https://curiousbeams.github.io/esm-widgets/image-carousel.js
+:class: w-full
+{
+  "images": [
+    "https://curiousbeams.github.io/images/gallery/20251215_holiday-dinner.jpeg",
+    "https://curiousbeams.github.io/images/gallery/20251219_mathijs-bep.jpeg",
+    "https://curiousbeams.github.io/images/gallery/20260120_nwo-physics.jpeg",
+    "https://curiousbeams.github.io/images/gallery/20260219_bep-mep-market.jpeg",
+  ],
+  "height_ratio": 0.6,
+  "border_radius": "0.5rem"
+}
+:::
+::::

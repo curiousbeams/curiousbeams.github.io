@@ -1,43 +1,39 @@
 news:
-  - title: Curious Beams at BEP / MEP market  
-    date: "20 Feb 2026"
-    image: ./images/news/bep-mep_market.jpeg
+  - title: Curious Beams @ BEP/MEP market  
+    date: "19 Feb 2026"
+    image: ./images/gallery/20260219_bep-mep-market.jpeg
     description: |
-      George and Willem represented the Curious Beams Lab at the Applied Physics BEP/MEP market, engaging in lively conversations with prospective students. 
-      The CBL stand featured a hands-on demo of the Fourier Atlas kit, illustrating diffraction as a physical analogue of the Fourier transform.
+      George and Willem represented the Curious Beams Lab at the Applied Physics BEP/MEP market, meeting prospective students and demonstrating the Fourier Atlas kit as a hands-on analogue of the Fourier transform.
     tags:
       - activities
-  - title: George gives University of Vienna seminar
+  - title: Seminar @ University of Vienna
     url: https://cbl.curve.space/articles/curious-beams-presentation-20260210-direct-ptychography
     date: "10 Feb 2026"
-    image: ./images/news/streaming_parallax_placeholder.png
+    image: ./images/gallery/presentation-placeholder_streaming-parallax.png
     description: |
-      George gave a seminar at the Physics of Nanostructured Materials group at the University of Vienna, discussing streaming parallax implementations.
-      The visit also included sampling typical Viennese meals and the refreshing drink, Soda-Zitron!
+      George gave a seminar at the University of Vienna’s Physics of Nanostructured Materials group on streaming parallax methods, with time to sample Viennese cuisine and a Soda-Zitron.
     tags:
       - presentations
-  - title: George attends NWO Physics  
+  - title: Curious Beams @ NWO Physics  
     date: "20 Jan 2026"
-    image: ./images/news/nwo_physics-2026.jpeg
+    image: ./images/gallery/20260120_nwo-physics.jpeg
     description: |
-      George attended the NWO Physics conference in Veldhoven, his first conference featuring a science-communicator moderator and a lively panel discussion among PIs on the values shaping our research community.
+      George attended the NWO Physics conference in Veldhoven, featuring a science-communicator moderator and a lively PI discussion on the values shaping our research community.
     tags:
       - activities
-  - title: Mathijs successfully defends his BEP thesis
+  - title: Mathijs defends his BEP
     url: https://www.linkedin.com/posts/gvarnavides_congratulations-to-mathijs-van-den-doel-on-activity-7412161884210032640-wXtw
     date: "19 Dec 2025"
-    image: ./images/news/mathijs_bep.jpeg
+    image: ./images/gallery/20251219_mathijs-bep.jpeg
     description: |
-      Mathijs successfully defended his Bachelor’s thesis with excellent results.
-      He will continue with the Curious Beams Lab as a research assistant this spring, further developing advanced electron imaging simulations.
+      Mathijs successfully defended his Bachelor’s thesis with excellent results and will continue with the Curious Beams Lab this spring as a research assistant.
     tags:
       - personnel
   - title: Inaugural Curious Beams holiday dinner  
     date: "15 Dec 2025"
-    image: ./images/news/holiday_dinner_2025.jpeg
+    image: ./images/gallery/20251215_holiday-dinner.jpeg
     description: |
-      We hosted the inaugural Curious Beams Lab holiday dinner, celebrating the end of the year together.
-      The evening featured lively discussions, good food, and a spirited game of Hitster -- where Willem staged a remarkable comeback to win the first CBL board game title.
+      We hosted the first Curious Beams Lab holiday dinner, closing the year with good food, lively discussion, and a spirited game of Hitster -- won by Willem after a remarkable comeback.
     tags:
       - activities
   - title: Willem starts his PhD
@@ -45,35 +41,32 @@ news:
     date: "17 Nov 2025"
     image: ./images/banners/cbl-logo.svg
     description: |
-      Willem joins the Curious Beams Lab as a PhD candidate,
-      where he will develop coherent diffractive imaging approaches for scanning electron microscopy in both transmission and reflection geometries.
+      Willem started his PhD at the Curious Beams Lab, developing coherent diffractive imaging methods for SEM in both transmission and reflection geometries.
     tags:
       - personnel
-  - title: George gives ImPhys Science Day and FAU Erlangen seminars
+  - title: ImPhys Science Day & FAU seminar
     url: https://www.tudelft.nl/2025/tnw/imphys-science-day-2025
     date: "12 Nov 2025"
-    image: ./images/news/imphys_science_day_2025.jpg
+    image: ./images/gallery/20251112_imphys-science-day.jpeg
     description: |
-      George presented seminars at the FAU Erlangen Materials Science Colloquium and at ImPhys Science Day 2025, 
-      discussing dose-efficient diffractive imaging with electrons and new directions for low-dose phase retrieval.
+      George presented seminars at FAU Erlangen and ImPhys Science Day 2025 on dose-efficient diffractive electron imaging and new directions in low-dose phase retrieval.
     tags:
       - presentations
-  - title: George attends Dutch Microscopy Days  
+  - title: Curious Beams @ Nemi Day  
     date: "27 Oct 2025"
-    image: ./images/news/ssnr_summary_figure.png
+    image: ./images/gallery/presentation-placeholder_ssnr-summary.png
     url: https://gvarnavides.com/2025nemi-day/
     description: |
-      George attended and presented at the Dutch Microscopy Days in Groningen, discussing information transfer in phase-contrast imaging -- a concept first discovered by Nobel Laureate Fritz Zernike at the University of Groningen.
+      George presented at the Dutch Microscopy Days in Groningen on information transfer in phase-contrast imaging, revisiting concepts first discovered by Nobel Laureate Fritz Zernike.
     tags:
       - activities
       - presentations
-  - title: Mathijs starts his BEP thesis
+  - title: Mathijs starts his BEP
     url: https://cbl.curve.space/articles/curious-beams-presentation-20260210-direct-ptychography/higher-order-ms
     date: "13 Oct 2025"
     image: ./images/banners/cbl-logo.svg
     description: |
-      Mathijs joins the Curious Beams Lab for his Bachelor’s thesis,
-      where he will develop more accurate multislice algorithms for low-energy S/TEM simulations within the open-source package abTEM.
+      Mathijs began his Bachelor’s thesis at the Curious Beams Lab, developing improved multislice algorithms for low-energy S/TEM simulations in the open-source package abTEM.
     tags:
       - personnel
   - title: George joins Imaging Physics
@@ -81,7 +74,6 @@ news:
     date: "01 Sep 2025"
     image: ./images/banners/cbl-logo.svg
     description: |
-      George officially joins Imaging Physics in the Faculty of Applied Sciences at TU Delft as an Assistant Professor.
-      This appointment also marks the launch of the Curious Beams Lab, exploring new frontiers in diffractive and electron imaging.
+      George joined Imaging Physics at TU Delft as Assistant Professor, marking the launch of the Curious Beams Lab in diffractive and electron imaging.
     tags:
       - personnel

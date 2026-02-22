@@ -6,11 +6,12 @@ title: Gallery
 :class: w-full
 {
   "images": [
-    "https://curiousbeams.github.io/images/news/holiday_dinner_2025.jpeg",
-    "https://curiousbeams.github.io/images/news/nwo_physics-2026.jpeg",
-    "https://curiousbeams.github.io/images/news/mathijs_bep.jpeg"
+    "https://curiousbeams.github.io/images/gallery/20251215_holiday-dinner.jpeg",
+    "https://curiousbeams.github.io/images/gallery/20251219_mathijs-bep.jpeg",
+    "https://curiousbeams.github.io/images/gallery/20260120_nwo-physics.jpeg",
+    "https://curiousbeams.github.io/images/gallery/20260219_bep-mep-market.jpeg",
   ],
-  "height_ratio": 0.5,
-  "border_radius": "0.75rem"
+  "height_ratio": 0.6,
+  "border_radius": "0.5rem"
 }
 :::
