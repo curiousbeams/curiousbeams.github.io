@@ -98,7 +98,7 @@ Our goal is to make high-resolution electron microscopy robust and accessible --
   "images": [
     {
       "src": "https://curiousbeams.github.io/images/gallery/20260120_nwo-physics.jpeg",
-      "caption": "NWO Physics photobooth with ImPhys MInT group members."
+      "caption": "NWO Physics photobooth with ImPhys MInT."
     },
     {
       "src": "https://curiousbeams.github.io/images/gallery/20251219_mathijs-bep.jpeg",
@@ -106,7 +106,7 @@ Our goal is to make high-resolution electron microscopy robust and accessible --
     },
     {
       "src": "https://curiousbeams.github.io/images/gallery/20251215_holiday-dinner.jpeg",
-      "caption": "Willem makes a comeback to win inaugural CBL Hitster game"
+      "caption": "Willem wins inaugural CBL Hitster game."
     }
   ],
   "height_ratio": 0.6,

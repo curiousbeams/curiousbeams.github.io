@@ -112,7 +112,7 @@ export default {
       #${uid} .splide__arrow:hover { background: rgba(0,0,0,0.75); }
       #${uid} .splide__arrow svg { fill: #fff; }
       #${uid} .splide__pagination {
-        bottom: 2rem;  /* lift above caption bar */
+        bottom: 2.5rem;  /* lift above caption bar */
       }
       #${uid} .splide__pagination__page {
         background: rgba(255,255,255,0.55);

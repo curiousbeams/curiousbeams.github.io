@@ -8,7 +8,7 @@ title: Gallery
   "images": [
     {
       "src": "https://curiousbeams.github.io/images/gallery/20260120_nwo-physics.jpeg",
-      "caption": "NWO Physics photobooth with ImPhys MInT group members."
+      "caption": "NWO Physics photobooth with ImPhys MInT."
     },
     {
       "src": "https://curiousbeams.github.io/images/gallery/20251219_mathijs-bep.jpeg",
@@ -16,7 +16,7 @@ title: Gallery
     },
     {
       "src": "https://curiousbeams.github.io/images/gallery/20251215_holiday-dinner.jpeg",
-      "caption": "Willem makes a comeback to win inaugural CBL Hitster game"
+      "caption": "Willem wins inaugural CBL Hitster game."
     }
   ],
   "height_ratio": 0.6,
