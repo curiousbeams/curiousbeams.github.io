@@ -3,7 +3,7 @@ news:
     date: "19 Feb 2026"
     image: ./images/gallery/20260219_bep-mep-market.jpeg
     description: |
-      George and Willem represented the Curious Beams Lab at the Applied Physics BEP/MEP market, meeting prospective students and demonstrating the Fourier Atlas kit as a hands-on analogue of the Fourier transform.
+      George and Willem represented the Curious Beams Lab at the Applied Physics BEP/MEP market, meeting prospective students and demoing the Fourier Atlas kit as a physical analogue of the Fourier transform.
     tags:
       - activities
   - title: University of Vienna Seminar
@@ -57,7 +57,7 @@ news:
     image: ./images/gallery/presentation-placeholder_ssnr-summary.png
     url: https://gvarnavides.com/2025nemi-day/
     description: |
-      George presented at the Dutch Microscopy Days in Groningen on information transfer in phase-contrast imaging, revisiting concepts first discovered by Nobel Laureate Fritz Zernike.
+      George presented at the Dutch Microscopy Days in Groningen on information transfer in phase-contrast imaging, the technique first discovered by Groningen Nobel Laureate Fritz Zernike.
     tags:
       - activities
       - presentations
