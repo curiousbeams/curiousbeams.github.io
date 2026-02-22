@@ -21,6 +21,6 @@ title: Gallery
   ],
   "height_ratio": 0.6,
   "border_radius": "0.5rem",
-  "caption_on_hover": false,
+  "caption_on_hover": false
 }
 :::

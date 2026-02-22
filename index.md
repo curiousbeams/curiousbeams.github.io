@@ -111,7 +111,7 @@ Our goal is to make high-resolution electron microscopy robust and accessible --
   ],
   "height_ratio": 0.6,
   "border_radius": "0.5rem",
-  "caption_on_hover": true,
+  "caption_on_hover": true
 }
 :::
 
