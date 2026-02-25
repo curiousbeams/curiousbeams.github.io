@@ -1,3 +1,11 @@
+---
+title: Research
+---
+
+:::{warning} _Under construction_
+This page is left as an exercise for the reader!
+:::
+
 :::{any:bundle} https://curiousbeams.github.io/esm-widgets/observable-notebook.js
 
 {
@@ -12,7 +20,7 @@
     "probeFS"
   ],
   "overrides": {
-    "viz_width": "=width"
+    "viz_width": "=width * 0.95"
   }
 }
 
