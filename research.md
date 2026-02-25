@@ -13,7 +13,7 @@
   ],
   "overrides": {
     "viz_width": "=width * 0.5"
-  },
+  }
 }
 
 :::
