@@ -1,11 +1,3 @@
----
-title: Research
----
-
-:::{warning} _Under construction_
-This page is left as an exercise for the reader!
-:::
-
 :::{any:bundle} https://curiousbeams.github.io/esm-widgets/observable-notebook.js
 
 {
@@ -17,15 +9,11 @@ This page is left as an exercise for the reader!
   "dependencies": [
     "aberrationCoefs",
     "wavelength",
-    "probeFS",
-    "angularFrequencies",
-    "angularSampling",
-    "probeFS_shifted",
-    "probeReal",
-    "probeCentered",
-    "probeIntensity"
+    "probeFS"
   ],
-  "height": "500px"
+  "overrides": {
+    "viz_width": "=width * 0.5"
+  },
 }
 
 :::

@@ -19,6 +19,7 @@ export default {
     const notebookUrl = model.get("notebook");
     const cells = model.get("cells"); // Optional: specific cells to render
     const dependencies = model.get("dependencies"); // Optional: cells to evaluate but not display
+    const overrides = model.get("overrides"); // Optional: object with cell values to override
     const height = model.get("height");
     const width = model.get("width");
     
@@ -61,8 +62,8 @@ export default {
           cellContainers.set(cellName, cellContainer);
         });
         
-        // Set up the module with proper cell handling
-        runtime.module(define, name => {
+        // Create a main module from the notebook definition
+        const main = runtime.module(define, name => {
           // If this cell should be displayed, return an Inspector
           if (cellContainers.has(name)) {
             return new Inspector(cellContainers.get(name));
@@ -74,16 +75,60 @@ export default {
           // Otherwise, don't evaluate this cell
           return undefined;
         });
+        
+        // Function to apply overrides
+        const applyOverrides = () => {
+          if (overrides && typeof overrides === 'object') {
+            const containerWidth = container.offsetWidth;
+            const containerHeight = container.offsetHeight;
+            
+            for (const [cellName, value] of Object.entries(overrides)) {
+              let resolvedValue = value;
+              
+              // If the value is a string starting with "=", evaluate it as an expression
+              if (typeof value === 'string' && value.startsWith('=')) {
+                try {
+                  // Create a safe evaluation context with width and height
+                  const expr = value.substring(1);
+                  resolvedValue = Function('width', 'height', `return ${expr}`)(containerWidth, containerHeight);
+                } catch (e) {
+                  console.error(`Error evaluating override expression "${value}":`, e);
+                  resolvedValue = value;
+                }
+              }
+              
+              main.redefine(cellName, resolvedValue);
+            }
+          }
+        };
+        
+        // Apply overrides initially
+        applyOverrides();
+        
+        // Set up resize observer to reapply overrides on container resize
+        const resizeObserver = new ResizeObserver(() => {
+          applyOverrides();
+        });
+        resizeObserver.observe(container);
+        
+        // Update cleanup to disconnect observer
+        const originalCleanup = () => {
+          runtime.dispose();
+        };
+        
+        return () => {
+          resizeObserver.disconnect();
+          originalCleanup();
+        };
       } else {
         // Render entire notebook
         runtime.module(define, Inspector.into(container));
+        
+        return () => {
+          runtime.dispose();
+        };
       }
-      
-      // Cleanup function
-      return () => {
-        runtime.dispose();
-      };
-      
+            
     } catch (error) {
       console.error('Error loading Observable notebook:', error);
       el.innerHTML = `<p style="color: red;">Error loading notebook: ${error.message}</p>`;
