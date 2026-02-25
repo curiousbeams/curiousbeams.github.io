@@ -20,7 +20,7 @@ This page is left as an exercise for the reader!
     "probeFS"
   ],
   "overrides": {
-    "viz_width": "=width * 0.999"
+    "viz_width": "=width * 0.99"
   }
 }
 
