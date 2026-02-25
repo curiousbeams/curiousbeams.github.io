@@ -12,7 +12,7 @@
     "probeFS"
   ],
   "overrides": {
-    "viz_width": "=width * 0.5"
+    "viz_width": "=width"
   }
 }
 
