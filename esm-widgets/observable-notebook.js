@@ -18,6 +18,7 @@ export default {
     // Get parameters from the model
     const notebookUrl = model.get("notebook");
     const cells = model.get("cells"); // Optional: specific cells to render
+    const dependencies = model.get("dependencies"); // Optional: cells to evaluate but not display
     const height = model.get("height");
     const width = model.get("width");
     
@@ -49,17 +50,29 @@ export default {
       
       if (cells && Array.isArray(cells)) {
         // Render specific cells
+        const cellContainers = new Map();
+        
+        // Create containers for each cell to display
         cells.forEach((cellName, index) => {
           const cellContainer = document.createElement('div');
           cellContainer.id = `observable-cell-${index}`;
           cellContainer.className = 'observable-cell';
           container.appendChild(cellContainer);
-          
-          runtime.module(define, name => {
-            if (name === cellName) {
-              return new Inspector(cellContainer);
-            }
-          });
+          cellContainers.set(cellName, cellContainer);
+        });
+        
+        // Set up the module with proper cell handling
+        runtime.module(define, name => {
+          // If this cell should be displayed, return an Inspector
+          if (cellContainers.has(name)) {
+            return new Inspector(cellContainers.get(name));
+          }
+          // If this cell is a dependency, evaluate it but don't display
+          if (dependencies && Array.isArray(dependencies) && dependencies.includes(name)) {
+            return true;
+          }
+          // Otherwise, don't evaluate this cell
+          return undefined;
         });
       } else {
         // Render entire notebook
