@@ -16,6 +16,7 @@ project:
     - file: interactive-content.md
     - file: news.md
     - file: gallery.md
+    - file: wolfram-notebook-embedder-test.md
 site:
   template: book-theme
   nav:
@@ -33,5 +34,7 @@ site:
       url: /news
     - title: Gallery
       url: /gallery
+    - title: WL
+      url: /wolfram-notebook-embedder-test
   options:
     hide_footer_links: false
