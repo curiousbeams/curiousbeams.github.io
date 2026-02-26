@@ -10,20 +10,14 @@ title: WL Embedder Test
   "showBorder": false,
 
   "style": {
-    "borderRadius": "10px",
-    "overflow": "hidden",
-    "boxShadow": "0 4px 16px rgba(0,0,0,0.1)"
+    "borderRadius": "8px",
+    "overflow": "hidden"
   },
-
-  "headingStyle": {
-    "fontFamily": "Georgia, serif",
-    "color": "#1a1a2e",
-    "borderBottom": "1px solid #ccc"
-  },
-
-  "backgroundStyle": {
-    "background": "linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%)"
-  }
+  
+  "customCSS": "
+    {{id}} .WolframNotebookEmbedder { background: #f0f4f8; }
+    {{id}} .cell-content .native-layout { color: #c0392b; font-style: italic; }
+  "
 }
 
 :::
