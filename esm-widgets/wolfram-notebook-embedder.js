@@ -1,42 +1,29 @@
 // wolfram-notebook.js
 // AnyWidget ESM module for embedding Wolfram Cloud notebooks.
 //
-// Usage (MyST any:bundle directive):
-//
 // :::{any:bundle} https://your-host/wolfram-notebook.js
 // {
 //   "url": "https://www.wolframcloud.com/obj/your-notebook",
-//
-//   "width": 800,               // optional – px number; null = adapt to container
-//   "maxHeight": 600,           // optional – px number; omit = grow freely
-//   "allowInteract": true,      // optional, default true
-//   "showBorder": false,        // optional, default null (notebook decides)
-//   "showRenderProgress": true, // optional, default true
-//
-//   "style": {                  // optional – CSS-in-JS applied to the outer wrapper div
-//     "borderRadius": "8px",
-//     "boxShadow": "0 2px 12px rgba(0,0,0,0.12)"
-//   },
-//
-//   "customCSS": "..."          // optional – raw CSS string, scoped to this widget's
-//                               // container via a generated #id prefix.
-//                               // Use the browser Inspector on your notebook to find
-//                               // the real class names to target.
-//                               // The placeholder {{id}} is replaced with the container id.
-//                               //
-//                               // Example — tint the notebook background and style headings:
-//                               //
-//                               // "customCSS": "
-//                               //   {{id}} .WolframNotebookEmbedder { background: #f0f4f8; }
-//                               //   {{id}} .cell-content .native-layout { color: #1a1a2e; }
-//                               // "
+//   "width": 800,
+//   "maxHeight": 600,
+//   "allowInteract": true,
+//   "showBorder": false,
+//   "showRenderProgress": true,
+//   "style": { "borderRadius": "8px" },
+//   "customCSS": "
+//     .WolframNotebookEmbedder { background: #f0f4f8; }
+//     .cell-content .native-layout { color: #c0392b; font-style: italic; }
+//   "
 // }
 // :::
+//
+// Every rule in customCSS is automatically scoped to this widget's container,
+// so styles never leak to the rest of the page.
 
 const EMBEDDER_CDN =
   "https://unpkg.com/wolfram-notebook-embedder@0.3/dist/wolfram-notebook-embedder.min.js";
 
-// ── Embedder loader (cached globally) ──────────────────────────────────────
+// ── Embedder loader ─────────────────────────────────────────────────────────
 
 let _embedderPromise = null;
 
@@ -58,15 +45,89 @@ function loadEmbedder() {
   return _embedderPromise;
 }
 
-// ── Style helpers ───────────────────────────────────────────────────────────
+// ── CSS auto-scoping ────────────────────────────────────────────────────────
 
-function cssObjectToString(obj) {
-  return Object.entries(obj)
-    .map(([prop, value]) => {
-      const kebab = prop.replace(/([A-Z])/g, (m) => `-${m.toLowerCase()}`);
-      return `${kebab}:${value}`;
-    })
-    .join("; ");
+/**
+ * Parse a CSS string and prefix every selector with `#containerId`.
+ *
+ * Handles:
+ *   - Multiple selectors separated by commas
+ *   - Multi-line rules
+ *   - @-rules (passed through unchanged — @keyframes, @media etc.)
+ *
+ * Does NOT handle nested CSS or complex at-rules, which aren't needed here.
+ */
+function scopeCSS(css, id) {
+  const scope = `#${id}`;
+
+  // Strip comments first
+  css = css.replace(/\/\*[\s\S]*?\*\//g, "");
+
+  const result = [];
+  let i = 0;
+
+  while (i < css.length) {
+    // Skip whitespace
+    while (i < css.length && /\s/.test(css[i])) i++;
+    if (i >= css.length) break;
+
+    // At-rule: pass through as-is (find matching braces or semicolon)
+    if (css[i] === "@") {
+      const semi = css.indexOf(";", i);
+      const brace = css.indexOf("{", i);
+      if (semi !== -1 && (brace === -1 || semi < brace)) {
+        result.push(css.slice(i, semi + 1));
+        i = semi + 1;
+      } else if (brace !== -1) {
+        // Find matching closing brace
+        let depth = 0;
+        let j = brace;
+        while (j < css.length) {
+          if (css[j] === "{") depth++;
+          else if (css[j] === "}") { depth--; if (depth === 0) break; }
+          j++;
+        }
+        result.push(css.slice(i, j + 1));
+        i = j + 1;
+      }
+      continue;
+    }
+
+    // Find the opening brace for this rule
+    const braceOpen = css.indexOf("{", i);
+    if (braceOpen === -1) break;
+
+    // Find the matching closing brace
+    let depth = 0;
+    let braceClose = braceOpen;
+    while (braceClose < css.length) {
+      if (css[braceClose] === "{") depth++;
+      else if (css[braceClose] === "}") { depth--; if (depth === 0) break; }
+      braceClose++;
+    }
+
+    // The selector string (may be comma-separated)
+    const selectorPart = css.slice(i, braceOpen).trim();
+    const declarations = css.slice(braceOpen + 1, braceClose).trim();
+
+    // Prefix each comma-separated selector
+    const scopedSelector = selectorPart
+      .split(",")
+      .map(sel => {
+        sel = sel.trim();
+        if (!sel) return "";
+        // If the user already wrote the scope id, don't double-prefix
+        if (sel.startsWith(scope)) return sel;
+        return `${scope} ${sel}`;
+      })
+      .filter(Boolean)
+      .join(",\n");
+
+    result.push(`${scopedSelector} { ${declarations} }`);
+    i = braceClose + 1;
+  }
+
+  return result.join("\n");
 }
 
 function injectStyle(css) {
@@ -77,6 +138,15 @@ function injectStyle(css) {
   return () => el.remove();
 }
 
+function cssObjectToString(obj) {
+  return Object.entries(obj)
+    .map(([prop, value]) => {
+      const kebab = prop.replace(/([A-Z])/g, m => `-${m.toLowerCase()}`);
+      return `${kebab}:${value}`;
+    })
+    .join("; ");
+}
+
 // ── Widget ──────────────────────────────────────────────────────────────────
 
 export default {
@@ -85,7 +155,6 @@ export default {
   },
 
   async render({ model, el }) {
-    // ── 1. Read config ──────────────────────────────────────────────────────
     const url                = model.get("url");
     const width              = model.get("width")              ?? null;
     const maxHeight          = model.get("maxHeight")          ?? null;
@@ -95,14 +164,13 @@ export default {
     const style              = model.get("style")              || {};
     const customCSS          = model.get("customCSS")          || "";
 
-    // ── 2. Validate ─────────────────────────────────────────────────────────
     if (!url) {
       el.innerHTML =
         '<p style="color:red;font-family:sans-serif;">wolfram-notebook: "url" is required.</p>';
       return () => {};
     }
 
-    // ── 3. Build container ──────────────────────────────────────────────────
+    // Unique container id — used as the CSS scope anchor
     const id = `wolfram-nb-${Math.random().toString(36).slice(2, 9)}`;
 
     const container = document.createElement("div");
@@ -115,28 +183,21 @@ export default {
 
     el.appendChild(container);
 
-    // ── 4. Inject custom CSS ────────────────────────────────────────────────
-    // Replace {{id}} placeholder with the actual #id selector so the user
-    // can write readable CSS in the config without knowing the generated id.
-    // We also auto-prefix any bare selectors that don't already reference {{id}}
-    // as a convenience — but explicit {{id}} usage is recommended.
-    const processedCSS = customCSS.replace(/\{\{id\}\}/g, `#${id}`);
-    const removeStyles = injectStyle(processedCSS);
+    // Scope and inject customCSS — every rule is prefixed with #id automatically
+    const scoped = scopeCSS(customCSS, id);
+    const removeStyles = injectStyle(scoped);
 
-    // ── 5. Load embedder and embed ──────────────────────────────────────────
     let embedding = null;
     try {
       const WolframNotebookEmbedder = await loadEmbedder();
 
-      const embedOptions = {
+      embedding = await WolframNotebookEmbedder.embed(url, container, {
         allowInteract,
         showRenderProgress,
         ...(width     !== null && { width }),
         ...(maxHeight !== null && { maxHeight }),
         ...(showBorder !== null && { showBorder }),
-      };
-
-      embedding = await WolframNotebookEmbedder.embed(url, container, embedOptions);
+      });
 
     } catch (err) {
       console.error("wolfram-notebook:", err);
@@ -148,7 +209,6 @@ export default {
       return () => {};
     }
 
-    // ── 6. Cleanup ──────────────────────────────────────────────────────────
     return () => {
       try { embedding?.detach(); } catch (_) {}
       removeStyles();
