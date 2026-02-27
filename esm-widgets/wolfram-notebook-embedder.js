@@ -8,7 +8,9 @@
 //   "maxHeight": 600,           // optional – px; omit = grow freely
 //   "allowInteract": true,      // optional, default true
 //   "showBorder": false,        // optional, default null (notebook decides)
-//   "showRenderProgress": true  // optional, default true
+//   "showRenderProgress": true, // optional, default true
+//   "useShadowDOM": true        // optional, default true — isolates the notebook's
+//                               // styles from the rest of the page
 // }
 // :::
 
@@ -51,6 +53,7 @@ export default {
     const allowInteract      = model.get("allowInteract")      ?? true;
     const showBorder         = model.get("showBorder")         ?? null;
     const showRenderProgress = model.get("showRenderProgress") ?? true;
+    const useShadowDOM       = model.get("useShadowDOM")       ?? true;
 
     if (!url) {
       el.innerHTML =
@@ -76,6 +79,7 @@ export default {
         ...(width     !== null && { width }),
         ...(maxHeight !== null && { maxHeight }),
         ...(showBorder !== null && { showBorder }),
+        useShadowDOM,
       });
 
     } catch (err) {
