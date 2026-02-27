@@ -7,7 +7,7 @@ title: WL Embedder Test
 {
   "url": "https://www.wolframcloud.com/obj/gvarnavi/Published/3029-SP22__L18__surface-energy-anisotropy__04-06-22.nb",
   "allowInteract": true,
-  "showBorder": false,
-  "customCSS": "\n.WolframNotebookEmbedder { background: #f0f4f8; }\n.cell-content .native-layout { color: #c0392b; font-style: italic; }"
+  "showBorder": false
 }
+
 :::

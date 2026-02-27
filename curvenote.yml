@@ -34,7 +34,5 @@ site:
       url: /news
     - title: Gallery
       url: /gallery
-    - title: WL
-      url: /wolfram-notebook-embedder-test
   options:
     hide_footer_links: false
