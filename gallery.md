@@ -3,7 +3,6 @@ title: Gallery
 ---
 
 :::{any:bundle} https://curiousbeams.github.io/esm-widgets/image-carousel.js
-:class: w-full
 {
   "images": [
     {

@@ -93,7 +93,6 @@ Our goal is to make high-resolution electron microscopy robust and accessible --
 :::
 
 :::{any:bundle} https://curiousbeams.github.io/esm-widgets/image-carousel.js
-:class: w-full
 {
   "images": [
     {
