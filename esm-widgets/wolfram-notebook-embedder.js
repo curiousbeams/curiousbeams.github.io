@@ -9,15 +9,23 @@
 //   "allowInteract": true,      // optional, default true
 //   "showBorder": false,        // optional, default null (notebook decides)
 //   "showRenderProgress": true, // optional, default true
-//   "useShadowDOM": true        // optional, default true — isolates the notebook's
-//                               // styles from the rest of the page
+//   "useShadowDOM": true,       // optional, default true
+//
+//   "shadowCSS": "..."          // optional – raw CSS injected directly into the
+//                               // shadow root, so it can reach notebook internals.
+//                               // Use the browser Inspector (expand the shadow-root
+//                               // node) to find selectors.
+//                               // Example:
+//                               // "shadowCSS": "
+//                               //   .WolframNotebookEmbedder { background: white; }
+//                               // "
 // }
 // :::
 
 const EMBEDDER_CDN =
   "https://unpkg.com/wolfram-notebook-embedder@0.3/dist/wolfram-notebook-embedder.min.js";
 
-// ── Embedder loader (cached globally across instances) ──────────────────────
+// ── Embedder loader (cached globally) ──────────────────────────────────────
 
 let _embedderPromise = null;
 
@@ -39,6 +47,33 @@ function loadEmbedder() {
   return _embedderPromise;
 }
 
+// ── Shadow root style injection ─────────────────────────────────────────────
+
+/**
+ * Wait for the shadow root to appear on the container (the embedder attaches
+ * it asynchronously), then inject a <style> element inside it.
+ * Returns a cleanup fn that removes the injected element.
+ */
+function injectIntoShadowRoot(container, css) {
+  if (!css || !css.trim()) return () => {};
+
+  return new Promise((resolve) => {
+    function tryInject() {
+      const shadowRoot = container.shadowRoot;
+      if (shadowRoot) {
+        const styleEl = document.createElement("style");
+        styleEl.textContent = css;
+        shadowRoot.appendChild(styleEl);
+        resolve(() => styleEl.remove());
+      } else {
+        // Shadow root not attached yet — poll briefly
+        setTimeout(tryInject, 50);
+      }
+    }
+    tryInject();
+  });
+}
+
 // ── Widget ──────────────────────────────────────────────────────────────────
 
 export default {
@@ -54,6 +89,7 @@ export default {
     const showBorder         = model.get("showBorder")         ?? null;
     const showRenderProgress = model.get("showRenderProgress") ?? true;
     const useShadowDOM       = model.get("useShadowDOM")       ?? true;
+    const shadowCSS          = model.get("shadowCSS")          || "";
 
     if (!url) {
       el.innerHTML =
@@ -69,7 +105,15 @@ export default {
 
     el.appendChild(container);
 
+    // Start listening for the shadow root immediately, in parallel with embedding,
+    // since the embedder attaches it synchronously before its async work completes.
+    const shadowInjectPromise = useShadowDOM
+      ? injectIntoShadowRoot(container, shadowCSS)
+      : Promise.resolve(() => {});
+
     let embedding = null;
+    let removeShadowStyles = () => {};
+
     try {
       const WolframNotebookEmbedder = await loadEmbedder();
 
@@ -82,6 +126,9 @@ export default {
         useShadowDOM,
       });
 
+      // Resolve shadow style injection (should already be done by now)
+      removeShadowStyles = await shadowInjectPromise;
+
     } catch (err) {
       console.error("wolfram-notebook:", err);
       container.innerHTML = `
@@ -93,6 +140,7 @@ export default {
 
     return () => {
       try { embedding?.detach(); } catch (_) {}
+      removeShadowStyles();
       container.remove();
     };
   },
