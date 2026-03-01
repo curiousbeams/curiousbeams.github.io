@@ -204,6 +204,49 @@ export default {
 
       el.innerHTML = "";
 
+      // Overlay shown until marimo populates the first cell output.
+      // Position relative on el so the overlay can sit on top of the islands.
+      el.style.position = "relative";
+      const overlay = document.createElement("div");
+      overlay.style.cssText = `
+        display: flex; flex-direction: column;
+        align-items: center; justify-content: center;
+        gap: 0.6rem;
+        padding: 3rem;
+        font-family: sans-serif; font-size: .82rem; color: #888;
+      `;
+      overlay.innerHTML = `
+        <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 24 24"
+             fill="none" stroke="currentColor" stroke-width="1.5"
+             stroke-linecap="round" stroke-linejoin="round"
+             style="animation: _mo-spin 1.2s linear infinite; flex-shrink:0">
+          <path d="M21 12a9 9 0 1 1-6.219-8.56"/>
+        </svg>
+        <span>Initializing marimo…</span>`;
+      el.appendChild(overlay);
+
+      // Inject the spin keyframe once
+      if (!document.head.querySelector("#_mo-spin-style")) {
+        const s = document.createElement("style");
+        s.id = "_mo-spin-style";
+        s.textContent =
+          "@keyframes _mo-spin { to { transform: rotate(360deg); } }";
+        document.head.appendChild(s);
+      }
+
+      // Watch for marimo writing content into any marimo-cell-output.
+      // The first non-empty output means hydration is underway → remove overlay.
+      const observer = new MutationObserver(() => {
+        const hasOutput = [...el.querySelectorAll("marimo-cell-output")].some(
+          (o) => o.childElementCount > 0,
+        );
+        if (hasOutput) {
+          overlay.remove();
+          observer.disconnect();
+        }
+      });
+      observer.observe(el, { childList: true, subtree: true });
+
       cells.forEach((cell, idx) => {
         const island = document.createElement("marimo-island");
         island.setAttribute("data-app-id", "main");
