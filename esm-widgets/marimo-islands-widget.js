@@ -239,8 +239,7 @@ export default {
       // That's the true "ready" signal — later than class="marimo" which
       // fires when the islands JS hydrates but before Pyodide finishes.
       const observer = new MutationObserver(() => {
-        const hasOutput =
-          el.querySelector("marimo-cell-output .output") !== null;
+        const hasOutput = el.querySelector("marimo-island .output") !== null;
         if (hasOutput) {
           overlay.remove();
           observer.disconnect();
