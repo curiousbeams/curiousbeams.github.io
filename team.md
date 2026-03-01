@@ -21,7 +21,7 @@ Please contact Georgios directly to explore current topics.
 
 :::{person}
 :name: Georgios Varnavides
-:position: PI | Assistant Professor
+:position: PI / Assistant Professor
 :pronouns: he/him
 :image: /images/team/VarnavidesGeorgios.webp
 :github: gvarnavi
