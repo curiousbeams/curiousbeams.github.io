@@ -7,10 +7,14 @@
  * ⚠️  One marimo notebook per page — multiple instances will conflict.
  *
  * Model properties:
- *   url       {string}  Required. URL of the remote .py marimo notebook.
- *   version   {string}  Optional. Overrides auto-detected version.
- *   height    {string}  Optional. CSS height of the widget container (default: "600px").
- *   width     {string}  Optional. CSS width  of the widget container (default: "100%").
+ *   url           {string}  Required. URL of the remote .py marimo notebook.
+ *   version       {string}  Optional. Overrides auto-detected version.
+ *   width         {string}  Optional. CSS width (default: "100%").
+ *   background    {string}  Optional. CSS background (default: "transparent").
+ *   border_radius {string}  Optional. CSS border-radius (default: "6px").
+ *
+ * Height is intentionally not configurable — the container expands to fit
+ * its content once marimo hydrates.
  */
 
 // ---------------------------------------------------------------------------
@@ -28,13 +32,16 @@ function parseVersion(src) {
  * @returns {MarimoCell[]}
  */
 function parseMarimoNotebook(src) {
-  const lines = src.split('\n');
+  const lines = src.split("\n");
   const cells = [];
   let i = 0;
 
   while (i < lines.length) {
     // 1. Find @app.cell decorator
-    if (!/^@app\.cell/.test(lines[i])) { i++; continue; }
+    if (!/^@app\.cell/.test(lines[i])) {
+      i++;
+      continue;
+    }
     const hideCode = /hide_code\s*=\s*True/i.test(lines[i]);
     i++;
 
@@ -43,39 +50,51 @@ function parseMarimoNotebook(src) {
     let depth = 0;
     while (i < lines.length) {
       const sl = lines[i];
-      for (const ch of sl) { if (ch === '(') depth++; else if (ch === ')') depth--; }
+      for (const ch of sl) {
+        if (ch === "(") depth++;
+        else if (ch === ")") depth--;
+      }
       i++;
-      if (depth <= 0 && sl.trimEnd().endsWith(':')) break;
+      if (depth <= 0 && sl.trimEnd().endsWith(":")) break;
     }
 
     // 3. Collect indented body lines
     const bodyLines = [];
     while (i < lines.length) {
       const line = lines[i];
-      if (line.length > 0 && line[0] !== ' ' && line[0] !== '\t') break;
+      if (line.length > 0 && line[0] !== " " && line[0] !== "\t") break;
       bodyLines.push(line);
       i++;
     }
-    while (bodyLines.length > 0 && bodyLines.at(-1).trim() === '') bodyLines.pop();
+    while (bodyLines.length > 0 && bodyLines.at(-1).trim() === "")
+      bodyLines.pop();
 
     // 4. Strip trailing `return` statement (marimo's dep-tracking artifact)
-    let returnStart = -1, parenBalance = 0;
+    let returnStart = -1,
+      parenBalance = 0;
     for (let j = bodyLines.length - 1; j >= 0; j--) {
       const t = bodyLines[j].trim();
       for (const ch of t) {
-        if (ch === ')' || ch === ']') parenBalance++;
-        else if (ch === '(' || ch === '[') parenBalance--;
+        if (ch === ")" || ch === "]") parenBalance++;
+        else if (ch === "(" || ch === "[") parenBalance--;
       }
-      if (/^return\b/.test(t) && parenBalance >= 0) { returnStart = j; break; }
-      if (parenBalance === 0 && t !== '' && !/^[)\],\\]/.test(t)) break;
+      if (/^return\b/.test(t) && parenBalance >= 0) {
+        returnStart = j;
+        break;
+      }
+      if (parenBalance === 0 && t !== "" && !/^[)\],\\]/.test(t)) break;
     }
 
-    const codeLines = returnStart >= 0 ? bodyLines.slice(0, returnStart) : [...bodyLines];
-    while (codeLines.length > 0 && codeLines.at(-1).trim() === '') codeLines.pop();
+    const codeLines =
+      returnStart >= 0 ? bodyLines.slice(0, returnStart) : [...bodyLines];
+    while (codeLines.length > 0 && codeLines.at(-1).trim() === "")
+      codeLines.pop();
 
     // 5. Dedent
-    const code = codeLines.map(l => l.startsWith('    ') ? l.slice(4) : l).join('\n');
-    if (code.trim() === '') continue;
+    const code = codeLines
+      .map((l) => (l.startsWith("    ") ? l.slice(4) : l))
+      .join("\n");
+    if (code.trim() === "") continue;
 
     cells.push({ code, hideCode });
   }
@@ -87,45 +106,55 @@ function parseMarimoNotebook(src) {
 // Head injection (idempotent)
 // ---------------------------------------------------------------------------
 
-const MARIMO_HEAD_ATTR = 'data-marimo-islands-loaded';
+const MARIMO_HEAD_ATTR = "data-marimo-islands-loaded";
 
 function injectHead(version) {
   if (document.head.querySelector(`[${MARIMO_HEAD_ATTR}]`)) return;
 
-  const base  = `https://cdn.jsdelivr.net/npm/@marimo-team/islands@${version}`;
+  const base = `https://cdn.jsdelivr.net/npm/@marimo-team/islands@${version}`;
   const fonts = `https://fonts.googleapis.com/css2?family=Fira+Mono:wght@400;500;700&family=Lora&family=PT+Sans:wght@400;700&display=swap`;
 
   const items = [
-    // Marimo islands runtime
-    Object.assign(document.createElement('script'), {
-      type: 'module',
+    Object.assign(document.createElement("script"), {
+      type: "module",
       src: `${base}/dist/main.js`,
     }),
-    // Marimo islands styles
-    Object.assign(document.createElement('link'), {
-      rel: 'stylesheet',
+    Object.assign(document.createElement("link"), {
+      rel: "stylesheet",
       href: `${base}/dist/style.css`,
-      crossOrigin: 'anonymous',
+      crossOrigin: "anonymous",
     }),
-    // Google fonts preconnects
-    Object.assign(document.createElement('link'), { rel: 'preconnect', href: 'https://fonts.googleapis.com' }),
-    Object.assign(document.createElement('link'), { rel: 'preconnect', href: 'https://fonts.gstatic.com', crossOrigin: '' }),
-    // Fonts
-    Object.assign(document.createElement('link'), { rel: 'stylesheet', href: fonts }),
-    // KaTeX
-    Object.assign(document.createElement('link'), {
-      rel: 'stylesheet',
-      href: 'https://cdn.jsdelivr.net/npm/katex@0.16.10/dist/katex.min.css',
-      integrity: 'sha384-wcIxkf4k558AjM3Yz3BBFQUbk/zgIYC2R0QpeeYb+TwlBVMrlgLqwRjRtGZiK7ww',
-      crossOrigin: 'anonymous',
+    Object.assign(document.createElement("link"), {
+      rel: "preconnect",
+      href: "https://fonts.googleapis.com",
     }),
-    // Required marimo-filename tag
-    Object.assign(document.createElement('marimo-filename'), { hidden: true }),
+    Object.assign(document.createElement("link"), {
+      rel: "preconnect",
+      href: "https://fonts.gstatic.com",
+      crossOrigin: "",
+    }),
+    Object.assign(document.createElement("link"), {
+      rel: "stylesheet",
+      href: fonts,
+    }),
+    Object.assign(document.createElement("link"), {
+      rel: "stylesheet",
+      href: "https://cdn.jsdelivr.net/npm/katex@0.16.10/dist/katex.min.css",
+      integrity:
+        "sha384-wcIxkf4k558AjM3Yz3BBFQUbk/zgIYC2R0QpeeYb+TwlBVMrlgLqwRjRtGZiK7ww",
+      crossOrigin: "anonymous",
+    }),
+    // Hide raw cell code content before Pyodide hydrates — it should
+    // never be visible to users regardless.
+    Object.assign(document.createElement("style"), {
+      textContent: "marimo-cell-code { display: none !important; }",
+    }),
+    // Required by marimo islands runtime
+    Object.assign(document.createElement("marimo-filename"), { hidden: true }),
   ];
 
-  // Mark the first element so we can detect a second call
   items[0].setAttribute(MARIMO_HEAD_ATTR, version);
-  items.forEach(el => document.head.appendChild(el));
+  items.forEach((node) => document.head.appendChild(node));
 }
 
 // ---------------------------------------------------------------------------
@@ -138,70 +167,62 @@ export default {
   },
 
   async render({ model, el }) {
-    const notebookUrl = model.get('url');
-    const versionProp = model.get('version');
-    const height      = model.get('height') || '600px';
-    const width       = model.get('width')  || '100%';
-    const background  = model.get('background') || 'transparent';
-    const borderRadius = model.get('border_radius') || '8px';
+    const notebookUrl = model.get("url");
+    const versionProp = model.get("version");
+    const width = model.get("width") || "100%";
+    const background = model.get("background") || "transparent";
+    const borderRadius = model.get("border_radius") || "6px";
 
+    // Height is auto — expands to fit content once hydrated.
     el.style.cssText = `
       display: block;
       width: ${width};
-      min-height: ${height};
-      position: relative;
       background: ${background};
       border-radius: ${borderRadius};
       overflow: hidden;
     `;
 
     if (!notebookUrl) {
-      el.textContent = 'marimo-widget: no notebook URL provided.';
+      el.textContent = "marimo-widget: no notebook URL provided.";
       return () => {};
     }
 
-    // Loading placeholder — sits on top of the (empty) island container
-    // and is removed once the islands are in the DOM.
-    const loader = document.createElement('div');
-    loader.style.cssText = `
-      display: flex; align-items: center; justify-content: center;
-      height: ${height}; color: #aaa; font-family: sans-serif; font-size: .8rem;
-    `;
-    loader.textContent = 'Fetching notebook…';
-    el.appendChild(loader);
+    el.textContent = "Loading notebook…";
 
     try {
       const resp = await fetch(notebookUrl);
-      if (!resp.ok) throw new Error(`HTTP ${resp.status} fetching ${notebookUrl}`);
+      if (!resp.ok)
+        throw new Error(`HTTP ${resp.status} fetching ${notebookUrl}`);
       const src = await resp.text();
 
-      const version = parseVersion(src) || versionProp || '0.20.2';
-      const cells   = parseMarimoNotebook(src);
-      if (cells.length === 0) throw new Error('No cells found — is this a valid marimo notebook?');
+      const version = parseVersion(src) || versionProp || "0.20.2";
+      const cells = parseMarimoNotebook(src);
+      if (cells.length === 0)
+        throw new Error("No cells found — is this a valid marimo notebook?");
 
-      // Inject CDN assets into <head> (once per page)
       injectHead(version);
 
-      // Remove loader, mount islands
-      el.innerHTML = '';
+      el.innerHTML = "";
 
       cells.forEach((cell, idx) => {
-        const island = document.createElement('marimo-island');
-        island.setAttribute('data-app-id', 'main');
-        island.setAttribute('data-cell-id', `cell-${String(idx).padStart(4, '0')}`);
-        island.setAttribute('data-cell-idx', String(idx));
-        island.setAttribute('data-reactive', 'true');
+        const island = document.createElement("marimo-island");
+        island.setAttribute("data-app-id", "main");
+        island.setAttribute(
+          "data-cell-id",
+          `cell-${String(idx).padStart(4, "0")}`,
+        );
+        island.setAttribute("data-cell-idx", String(idx));
+        island.setAttribute("data-reactive", "true");
 
-        const output = document.createElement('marimo-cell-output');
-        const code   = document.createElement('marimo-cell-code');
+        const output = document.createElement("marimo-cell-output");
+        const code = document.createElement("marimo-cell-code");
         code.textContent = encodeURIComponent(cell.code);
-        if (cell.hideCode) code.setAttribute('hidden', '');
+        if (cell.hideCode) code.setAttribute("hidden", "");
 
         island.appendChild(output);
         island.appendChild(code);
         el.appendChild(island);
       });
-
     } catch (err) {
       el.innerHTML = `<div style="padding:1rem;font-family:monospace;font-size:.8rem;
         color:#c0392b;background:#fff5f5;border:1px solid #fbb;border-radius:4px;
