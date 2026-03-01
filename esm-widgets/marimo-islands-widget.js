@@ -234,11 +234,14 @@ export default {
         document.head.appendChild(s);
       }
 
-      // Marimo adds class="marimo" to <marimo-island> when it hydrates.
-      // Watch for that on any island in the container.
+      // Marimo renders output into <div class="output block"> inside
+      // <marimo-cell-output> once Pyodide has actually run the cells.
+      // That's the true "ready" signal — later than class="marimo" which
+      // fires when the islands JS hydrates but before Pyodide finishes.
       const observer = new MutationObserver(() => {
-        const isHydrated = el.querySelector("marimo-island.marimo") !== null;
-        if (isHydrated) {
+        const hasOutput =
+          el.querySelector("marimo-cell-output .output") !== null;
+        if (hasOutput) {
           overlay.remove();
           observer.disconnect();
         }
