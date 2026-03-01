@@ -5,7 +5,8 @@ title: Marimo Islands Test
 :::{any:bundle} https://curiousbeams.github.io/esm-widgets/marimo-islands-widget.js
 
 {
-  "url": "https://raw.githubusercontent.com/gvarnavi/2024juelich-seminar/refs/heads/main/src/data-files/zernike-phase-plates.py"
+  "url": "https://raw.githubusercontent.com/gvarnavi/2024juelich-seminar/refs/heads/main/src/data-files/zernike-phase-plates.py",
+  "version": "0.20.2"
 }
 
 :::
