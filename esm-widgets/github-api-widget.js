@@ -367,7 +367,7 @@ export default {
           color: inherit;
           text-decoration: none;
           border: 1px solid #ddd;
-          border-radius: 8px;
+          border-radius: 6px;
           padding: 0.75rem;
           display: block;
         }
