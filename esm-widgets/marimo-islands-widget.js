@@ -7,7 +7,7 @@
  * ⚠️  One marimo notebook per page — multiple instances will conflict.
  *
  * Model properties:
- *   notebook  {string}  Required. URL of the remote .py marimo notebook.
+ *   url       {string}  Required. URL of the remote .py marimo notebook.
  *   version   {string}  Optional. Overrides auto-detected version.
  *   height    {string}  Optional. CSS height of the widget container (default: "600px").
  *   width     {string}  Optional. CSS width  of the widget container (default: "100%").
@@ -142,47 +142,54 @@ export default {
     const versionProp = model.get('version');
     const height      = model.get('height') || '600px';
     const width       = model.get('width')  || '100%';
+    const background  = model.get('background') || 'transparent';
+    const borderRadius = model.get('border_radius') || '8px';
 
-    el.style.cssText = `display:block;width:${width};min-height:${height};position:relative;`;
+    el.style.cssText = `
+      display: block;
+      width: ${width};
+      min-height: ${height};
+      position: relative;
+      background: ${background};
+      border-radius: ${borderRadius};
+      overflow: hidden;
+    `;
 
     if (!notebookUrl) {
       el.textContent = 'marimo-widget: no notebook URL provided.';
       return () => {};
     }
 
-    el.innerHTML = `<div style="display:flex;align-items:center;justify-content:center;
-      height:${height};color:#aaa;font-family:sans-serif;font-size:.8rem;">
-      Fetching notebook…</div>`;
+    // Loading placeholder — sits on top of the (empty) island container
+    // and is removed once the islands are in the DOM.
+    const loader = document.createElement('div');
+    loader.style.cssText = `
+      display: flex; align-items: center; justify-content: center;
+      height: ${height}; color: #aaa; font-family: sans-serif; font-size: .8rem;
+    `;
+    loader.textContent = 'Fetching notebook…';
+    el.appendChild(loader);
 
     try {
       const resp = await fetch(notebookUrl);
       if (!resp.ok) throw new Error(`HTTP ${resp.status} fetching ${notebookUrl}`);
       const src = await resp.text();
 
-      const version = parseVersion(src) || versionProp || '0.10.0';
+      const version = parseVersion(src) || versionProp || '0.20.2';
       const cells   = parseMarimoNotebook(src);
       if (cells.length === 0) throw new Error('No cells found — is this a valid marimo notebook?');
 
       // Inject CDN assets into <head> (once per page)
       injectHead(version);
 
-      // Build and mount island elements directly into el
+      // Remove loader, mount islands
       el.innerHTML = '';
-
-      // Init island — marimo replaces this with a spinner while Pyodide loads
-      const initIsland = document.createElement('marimo-island');
-      initIsland.setAttribute('data-app-id', 'main');
-      initIsland.setAttribute('data-cell-id', 'cell-init');
-      initIsland.setAttribute('data-reactive', 'false');
-      initIsland.innerHTML = `
-        <marimo-cell-output></marimo-cell-output>
-        <marimo-cell-code hidden></marimo-cell-code>`;
-      el.appendChild(initIsland);
 
       cells.forEach((cell, idx) => {
         const island = document.createElement('marimo-island');
         island.setAttribute('data-app-id', 'main');
         island.setAttribute('data-cell-id', `cell-${String(idx).padStart(4, '0')}`);
+        island.setAttribute('data-cell-idx', String(idx));
         island.setAttribute('data-reactive', 'true');
 
         const output = document.createElement('marimo-cell-output');

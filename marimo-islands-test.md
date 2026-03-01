@@ -6,7 +6,8 @@ title: Marimo Islands Test
 
 {
   "url": "https://raw.githubusercontent.com/gvarnavi/2024juelich-seminar/refs/heads/main/src/data-files/zernike-phase-plates.py",
-  "version": "0.20.2"
+  "version": "0.20.2",
+  "background": "#f5f5f0"
 }
 
 :::
