@@ -234,13 +234,11 @@ export default {
         document.head.appendChild(s);
       }
 
-      // Watch for marimo writing content into any marimo-cell-output.
-      // The first non-empty output means hydration is underway → remove overlay.
+      // Marimo adds class="marimo" to <marimo-island> when it hydrates.
+      // Watch for that on any island in the container.
       const observer = new MutationObserver(() => {
-        const hasOutput = [...el.querySelectorAll("marimo-cell-output")].some(
-          (o) => o.childElementCount > 0,
-        );
-        if (hasOutput) {
+        const isHydrated = el.querySelector("marimo-island.marimo") !== null;
+        if (isHydrated) {
           overlay.remove();
           observer.disconnect();
         }
