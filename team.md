@@ -7,21 +7,21 @@ title: Team
 
 Formal PhD and Postdoctoral vacancies are listed on the TU Delft Careers portal and will be advertised here.
 
-**Fellowships:** We are always interested in supporting and hosting fellowship applications (e.g., MSCA Postdoctoral Fellowships) for candidates with a strong research track record.
+**Fellowships:** We are always interested in supporting and hosting fellowship applications (e.g., MSCA Postdoctoral Fellowships) for motivated candidates.
 
 **Prospective Researchers:** If you are an exceptional fit but see no open role, feel free to email Georgios with your CV and cover letter.
 We often have funding on the horizon, though please understand if we cannot provide a personal response to every inquiry.
 
-**BSc & MSc Students:** We always welcome Applied Sciences students for BEP/MEP projects.
+**BSc & MSc Students:** We always welcome TU Delft students for BEP/MEP projects.
 Please contact Georgios directly to explore current topics.
 
 :::
 
-## Principal Investigator
+## Lab Leadership
 
 :::{person}
 :name: Georgios Varnavides
-:position: Assistant Professor
+:position: PI | Assistant Professor
 :pronouns: he/him
 :image: /images/team/VarnavidesGeorgios.webp
 :github: gvarnavi
@@ -42,6 +42,17 @@ Selected Works:
 - [Evaluating the Transfer of Information in Phase Retrieval STEM Techniques](https://doi.org/10.69761/ehch7395)
 - [Low-dose cryo-electron ptychography of proteins at sub-nanometer resolution](https://doi.org/10.1038/s41467-024-52403-5)
 - [Direct imaging and electronic structure modulation of moiré superlattices at the 2D/3D interface](https://doi.org/10.1038/s41467-021-21363-5)
+:::
+
+:::{person}
+:name: Hannah van Lookeren Campagne
+:position: Management Assistant
+:pronouns: she/her
+:image: /images/team/HannahVanLookerenCampagne.webp
+:email: h.vanlookerencampagne@tudelft.nl
+:linkedin: hannah-van-lookeren-campagne
+:reverse:
+
 :::
 
 ## Research Team
