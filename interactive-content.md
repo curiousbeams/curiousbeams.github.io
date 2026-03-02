@@ -23,7 +23,6 @@ Below you can find all TU Delft lecture notes contributed to by lab members.
 :venue: curious-beams
 :collection: lectures
 :show-thumbnails:
-:show-date:
 :show-authors:
 :layout: cards
 ```
