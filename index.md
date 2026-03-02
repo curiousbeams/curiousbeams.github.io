@@ -40,7 +40,18 @@ Our goal is to make high-resolution electron microscopy robust and accessible --
 
 :::
 
+```{cn:articles}
+:venue: curious-beams
+:collection: lectures
+:limit: 3
+:show-thumbnails:
+:show-date:
+:show-authors:
+```
+
 :::{div .text-center}
+
+{button}`See All TU Delft Lecture Notes <./interactive-content.md#lectures>`
 
 :::
 

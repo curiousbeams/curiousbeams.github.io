@@ -15,6 +15,19 @@ Below you can find all interactive presentations given by lab members.
 :layout: cards
 ```
 
+## Lectures
+
+Below you can find all TU Delft lecture notes contributed to by lab members.
+
+```{cn:articles}
+:venue: curious-beams
+:collection: lectures
+:show-thumbnails:
+:show-date:
+:show-authors:
+:layout: cards
+```
+
 ## Computational Articles
 
 Below you can find all interactive articles, workshops, and tutorials written by lab members.
