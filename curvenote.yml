@@ -37,3 +37,5 @@ site:
       url: /gallery
   options:
     hide_footer_links: false
+    hide_bibliography: false
+    layout: 'app'
