@@ -45,7 +45,6 @@ Our goal is to make high-resolution electron microscopy robust and accessible --
 :collection: lectures
 :limit: 3
 :show-thumbnails:
-:show-date:
 :show-authors:
 ```
 
@@ -60,6 +59,7 @@ Our goal is to make high-resolution electron microscopy robust and accessible --
 :collection: articles
 :limit: 3
 :show-thumbnails:
+:show-date:
 :show-authors:
 ```
 
