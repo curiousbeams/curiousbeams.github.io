@@ -17,7 +17,9 @@ project:
     - file: news.md
     - file: gallery.md
     - file: wolfram-notebook-embedder-test.md
+      hidden: true
     - file: marimo-islands-test.md
+      hidden: true
 site:
   template: book-theme
   nav:
