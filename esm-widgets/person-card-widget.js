@@ -52,7 +52,7 @@ const CSS = `
   --pc-text:        #1e293b;
   --pc-muted:       #64748b;
   --pc-accent:      #0f6fbe;
-  --pc-avatar-size: 142px;
+  --pc-avatar-size: 138px;
 
   background: var(--pc-bg);
   border: 1px solid var(--pc-border);
