@@ -2,12 +2,13 @@
 title: Publications
 ---
 
-:::{warning} _Last updated: 2026 Feb 08_
+:::{warning} _Last updated: 2026 June 01_
 For a likely more up-to-date list, see [Georgios's Google scholar page](https://scholar.google.com/citations?user=zWvoz5YAAAAJ&hl=en).
 :::
 
 ## 2026
-
+- [Beyond Contrast Transfer: Spectral SNR as a Finite-Dose Metric for STEM Phase Retrieval](https://doi.org/10.1093/mam/ozag005)
+- [Relaxing Direct Ptychography Sampling Requirements via Parallax Imaging Insights](https://doi.org/10.1093/mam/ozaf139)
 - [Locating the atoms at the hard-soft interface of gold nanoparticles](https://doi.org/10.1038/s41467-025-68113-5)
 
 ## 2025
@@ -16,10 +17,9 @@ For a likely more up-to-date list, see [Georgios's Google scholar page](https://
 - [PhaseT3M: 3D imaging at 1.6 Å resolution via electron cryo-tomography with nonlinear phase retrieval](@https://doi.org/10.1038/s41467-025-67303-5)
 - [Quantitative structure determination from experimental four-dimensional scanning transmission electron microscopy via the scattering matrix](https://doi.org/10.1093/mam/ozaf119)
 - [BEACON—automated aberration correction for scanning transmission electron microscopy using Bayesian optimization](https://doi.org/10.1038/s41524-025-01766-4)
-- [Beyond Contrast Transfer: Spectral SNR as a Dose-Aware Metric for STEM Phase Retrieval](https://doi.org/10.48550/arXiv.2507.19476)
-- [Relaxing Direct Ptychography Sampling Requirements via Parallax Imaging Insights](https://doi.org/10.48550/arXiv.2507.18610)
 - [Evaluating the Transfer of Information in Phase Retrieval STEM Techniques](https://doi.org/10.69761/ehch7395)
 - [Quantitative phase retrieval and characterization of magnetic nanostructures via Lorentz (scanning) transmission electron microscopy](https://doi.org/qqv8)
+- [Deep generative priors for robust and efficient electron ptychography](https://doi.org/10.48550/arXiv.2511.07795)
 - [Accelerating iterative ptychography with an integrated neural network](https://doi.org/10.1111/jmi.13407)
 - [A Practical Guide to Scanning and Transmission Electron Microscopy Simulations](https://doi.org/10.69761/aghr7357)
 - [Streaming Large-Scale Microscopy Data to a Supercomputing Facility](https://doi.org/qqvx)
