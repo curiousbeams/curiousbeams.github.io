@@ -4,7 +4,7 @@ news:
     image: ./images/gallery/mam_32_2cover.jpeg
     url: https://academic.oup.com/mam/issue/32/2#2517450-8664875
     description: |
-      two of our papers just came out in Microscopy & Microanalysis: Relaxing Direct Ptychography Sampling Requirements via Parallax Imaging Insights & Beyond Contrast Transfer: Spectral SNR as a Finite-Dose Metric for STEM Phase Retrieval"
+      Two new papers out in Microscopy & Microanalysis: Relaxing Direct Ptychography Sampling Requirements via Parallax Imaging Insights & Beyond Contrast Transfer: SSNR as a Finite-Dose Metric for STEM Phase Retrieval.
     tags:
       - conferences
   - title: George's US conference tour 
@@ -12,7 +12,7 @@ news:
     image: ./images/gallery/mrs2026-best-oral-presentation.pdf
     url: https://cbl.curve.space/articles/curious-beams-presentation-20260428-magnetic-diffactive-imaging
     description: |
-      George attends ACerS spring 2026 in Bellevue, WA; the 2026 annual Miller symposium in Santa Cruz, CA; MRS spring 2026 in Honolulu, HI; and PICO 2026 in Vaals, NL.
+      George represents the Curious Beams Lab at spring conferences: ACerS spring 2026 in Bellevue, WA; the 2026 annual Miller symposium in Santa Cruz, CA; MRS spring 2026 in Honolulu, HI; and PICO 2026 in Vaals, NL.
     tags:
       - conferences
   - title: CBL attends BEP/MEP market  
