@@ -12,11 +12,11 @@ site:
 :overlay: 30
 :actions: [Team](./team.md) [Research](./research.md) [Open Science](./open-science.md)
 
-Welcome to the **Curious Beams Lab** -- where we use *electron beams and advanced algorithms* to explore the structure and function of materials at the nanoscale.
+Welcome to the *Curious Beams Lab* -- where we use electron beams and advanced algorithms to explore the structure and function of materials at the nanoscale.
 
 :::
 
-We’re part of the [Imaging Physics Department](https://www.tudelft.nl/tnw/over-faculteit/afdelingen/imphys/) at **Delft University of Technology**, and our research lies at the intersection of physics, computation, and materials science.
+We’re part of the [Imaging Physics Department](https://www.tudelft.nl/tnw/over-faculteit/afdelingen/imphys/) at *Delft University of Technology*, and our research lies at the intersection of physics, computation, and materials science.
 Our goal is to make high-resolution electron microscopy robust and accessible -- combining modeling, simulation, and instrumentation to reveal how materials behave, atom by atom.
 
 :::{div .text-center}
@@ -120,18 +120,6 @@ Our goal is to make high-resolution electron microscopy robust and accessible --
     {
       "src": "https://curiousbeams.github.io/images/gallery/20260416_george-craig-acers.jpeg",
       "caption": "ACerS 2026, with mentor W Craig Carter."
-    },
-    {
-      "src": "https://curiousbeams.github.io/images/gallery/20260120_nwo-physics.jpeg",
-      "caption": "NWO Physics photobooth with ImPhys MInT."
-    },
-    {
-      "src": "https://curiousbeams.github.io/images/gallery/20251219_mathijs-bep.jpeg",
-      "caption": "Mathijs during his BEP defense."
-    },
-    {
-      "src": "https://curiousbeams.github.io/images/gallery/20251215_holiday-dinner.jpeg",
-      "caption": "Willem wins inaugural CBL Hitster game."
     }
   ],
   "height_ratio": 0.4,
