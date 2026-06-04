@@ -14,7 +14,7 @@ For a likely more up-to-date list, see [Georgios's Google scholar page](https://
 ## 2025
 
 - [Gap-free Information Transfer in 4D-STEM via Fusion of Complementary Scattering Channels](https://doi.org/10.48550/arXiv.2512.19460)
-- [PhaseT3M: 3D imaging at 1.6 Å resolution via electron cryo-tomography with nonlinear phase retrieval](@https://doi.org/10.1038/s41467-025-67303-5)
+- [PhaseT3M: 3D imaging at 1.6 Å resolution via electron cryo-tomography with nonlinear phase retrieval](https://doi.org/10.1038/s41467-025-67303-5)
 - [Quantitative structure determination from experimental four-dimensional scanning transmission electron microscopy via the scattering matrix](https://doi.org/10.1093/mam/ozaf119)
 - [BEACON—automated aberration correction for scanning transmission electron microscopy using Bayesian optimization](https://doi.org/10.1038/s41524-025-01766-4)
 - [Evaluating the Transfer of Information in Phase Retrieval STEM Techniques](https://doi.org/10.69761/ehch7395)
