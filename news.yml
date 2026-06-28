@@ -1,4 +1,12 @@
 news:
+  - title: MRS Bulletin review paper 
+    date: "Jun 2026"
+    image: ./images/gallery/mrs_bulletin_fig.webp
+    url: https://doi.org/10.1557/s43577-026-01100-3
+    description: |
+      Review paper out in MRS Bulletin (Special Issue on Mathematical Solutions for Materials Science): The ABCs of phase retrieval: Connecting the acronyms of scanning transmission electron microscopy.
+    tags:
+      - publications
   - title: Two papers out in M&M 
     date: "Apr 2026"
     image: ./images/gallery/mam_32_2cover.jpeg

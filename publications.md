@@ -7,6 +7,7 @@ For a likely more up-to-date list, see [Georgios's Google scholar page](https://
 :::
 
 ## 2026
+- [The ABCs of phase retrieval: Connecting the acronyms of scanning transmission electron microscopy](https://doi.org/10.1557/s43577-026-01100-3)
 - [Beyond Contrast Transfer: Spectral SNR as a Finite-Dose Metric for STEM Phase Retrieval](https://doi.org/10.1093/mam/ozag005)
 - [Relaxing Direct Ptychography Sampling Requirements via Parallax Imaging Insights](https://doi.org/10.1093/mam/ozaf139)
 - [Locating the atoms at the hard-soft interface of gold nanoparticles](https://doi.org/10.1038/s41467-025-68113-5)
