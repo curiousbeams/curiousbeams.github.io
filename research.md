@@ -17,27 +17,22 @@ These approaches are powerful for both functional materials in the physical scie
 
 This page introduces the key physical and computational ideas behind our work through interactive visualizations, and concludes with the open questions that drive our current research efforts.
 
-::::{tip} Converged Probes
-:class: dropdown
+### A 4D-STEM experiment
 
-:::{any:bundle} https://curiousbeams.github.io/esm-widgets/observable-notebook.js
+Gold nanoparticles on an amorphous carbon film, with the probe converging through the specimen onto the detector below — and *which part* of that detector you add up decides what the image shows.
 
+Press **scan** to raster the probe across the field and fill the four signal panels, or hover over the scene to drive it yourself and click to pin it.
+Nothing here is precomputed: the atoms, their projected potential, the exit wave, the diffraction pattern and every detector signal are computed in your browser, using the same multislice `abtem` runs and agreeing with it to one part in a million.
+
+::::{div}
+:class: col-page
+
+:::{anywidget} https://curiousbeams.github.io/em-widgets/observable-notebook.mjs
 {
-  "notebook": "https://api.observablehq.com/@gvarnavi/stem-probes-psf-ctf.js?v=4",
-  "cells": [
-    "viewof params",
-    "visualization_output"
-  ],
-  "dependencies": [
-    "aberrationCoefs",
-    "wavelength",
-    "probeFS"
-  ],
-  "overrides": {
-    "viz_width": "=width * 0.99"
-  }
+  // the body is JSON5 — comments and unquoted keys are fine
+  notebook: "https://curiousbeams.github.io/em-widgets/notebooks/stem-experiment.html",
+  cells: ["stemExperiment", "readoutView"],
 }
-
 :::
 ::::
 
