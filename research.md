@@ -24,9 +24,6 @@ Gold nanoparticles on an amorphous carbon film, with the probe converging throug
 Press **scan** to raster the probe across the field and fill the four signal panels, or hover over the scene to drive it yourself and click to pin it.
 Nothing here is precomputed: the atoms, their projected potential, the exit wave, the diffraction pattern and every detector signal are computed in your browser, using the same multislice `abtem` runs and agreeing with it to one part in a million.
 
-<!-- ::::{div}
-:class: col-page -->
-
 :::{anywidget} https://curiousbeams.github.io/em-widgets/observable-notebook.mjs
 {
   // the body is JSON5 — comments and unquoted keys are fine
@@ -34,7 +31,6 @@ Nothing here is precomputed: the atoms, their projected potential, the exit wave
   cells: ["stemExperiment", "readoutView"],
 }
 :::
-<!-- :::: -->
 
 ## Current Research Efforts
 
