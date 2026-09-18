@@ -118,24 +118,9 @@ Our goal is to make high-resolution electron microscopy robust and accessible --
 
 :::{anywidget} https://curiousbeams.github.io/esm-widgets/image-carousel.js
 {
-  "images": [
-    {
-      "src": "https://curiousbeams.github.io/images/gallery/20260507_pico-triple-point.jpeg",
-      "caption": "PICO 2026, tri-country point hike."
-    },
-    {
-      "src": "https://curiousbeams.github.io/images/gallery/20260427_mrs-dinner.jpg",
-      "caption": "MRS 2026, dinner with friends."
-    },
-    {
-      "src": "https://curiousbeams.github.io/images/gallery/20260417_miller-symposium.jpg",
-      "caption": "2026 Miller symposium, opening reception."
-    },
-    {
-      "src": "https://curiousbeams.github.io/images/gallery/20260416_george-craig-acers.jpeg",
-      "caption": "ACerS 2026, with mentor W Craig Carter."
-    }
-  ],
+  // the four most recent photographs from gallery.yml; the full set is on /gallery
+  "source": "https://curiousbeams.github.io/gallery.yml",
+  "limit": 4,
   "height_ratio": 0.4,
   "border_radius": "0.5rem",
   "caption_on_hover": true

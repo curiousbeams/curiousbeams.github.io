@@ -2,11 +2,23 @@
 //
 //   :::{anywidget} https://curiousbeams.github.io/esm-widgets/image-carousel.js
 //   {
+//     "source": "https://curiousbeams.github.io/gallery.yml",
+//     "key": "gallery",             // the top-level key in that file (default "gallery")
+//     "limit": 4,                   // 0 or absent: every photo in the file
+//     "height_ratio": 0.4,          // viewport height as a fraction of its width
+//     "border_radius": "0.5rem",
+//     "caption_on_hover": true
+//   }
+//   :::
+//
+// `images` may be given inline instead of `source`, and takes precedence:
+//
+//   {
 //     "images": [
 //       {"src": "https://…/photo.jpg", "caption": "What is happening."},
 //       "https://…/plain-url-also-works.jpg"
 //     ],
-//     "height_ratio": 0.6,          // viewport height as a fraction of its width
+//     "height_ratio": 0.6,
 //     "border_radius": "0.5rem",
 //     "caption_on_hover": false,    // true: reveal the caption on hover/focus
 //     "type": "loop",               // "loop" wraps around, "slide" stops at the ends
@@ -14,7 +26,8 @@
 //     "pagination": true,
 //     "autoplay": false             // true, or a number of milliseconds
 //   }
-//   :::
+//
+// See image-gallery.js for the full grid this shares its photo list with.
 //
 // This used to drive Splide from a CDN, which cannot work under {anywidget}:
 // Splide is handed a CSS selector string and looks it up with
@@ -305,12 +318,44 @@ function arrowButton(direction, pathData, label) {
   return button;
 }
 
-/** Normalise `images` to `{src, caption}`, accepting bare URL strings. */
+/** Normalise an entry to `{src, caption}`, accepting bare URL strings. */
 function readImages(raw) {
   return (Array.isArray(raw) ? raw : [])
-    .map((item) => (typeof item === "string" ? {src: item, caption: ""} : item))
-    .filter((item) => item && typeof item.src === "string" && item.src.trim())
-    .map((item) => ({src: item.src.trim(), caption: item.caption ?? ""}));
+    .map((item) => (typeof item === "string" ? {src: item} : item ?? {}))
+    .map((item) => ({src: item.src ?? item.image ?? "", caption: item.caption ?? item.title ?? ""}))
+    .filter((item) => typeof item.src === "string" && item.src.trim())
+    .map((item) => ({...item, src: item.src.trim()}));
+}
+
+/**
+ * Read the photo list out of a YAML file — the site's gallery.yml.
+ *
+ * js-yaml is imported by absolute URL, which is the only kind of import that
+ * survives here: the build copies this module to its own origin, so a relative
+ * import would resolve to a path that does not exist. It is also loaded lazily,
+ * so a carousel given its photos inline never fetches a parser it cannot use.
+ */
+async function loadSource(url, key, signal) {
+  const resolved = new URL(url, document.baseURI).href;
+  const response = await fetch(resolved, {signal});
+  if (!response.ok) throw new Error(`Fetching ${resolved} failed with HTTP ${response.status}.`);
+  const text = await response.text();
+  const {load} = await import("https://cdn.jsdelivr.net/npm/js-yaml@4.1.0/+esm");
+  const parsed = load(text) ?? {};
+  const entries = Array.isArray(parsed) ? parsed : parsed[key] ?? [];
+  // Paths in the file are written relative to the file, as news.yml writes them.
+  return readImages(entries).map((item) => ({...item, src: new URL(item.src, resolved).href}));
+}
+
+/** Everything the widget needs to know about where its photographs come from. */
+async function resolveImages(model, signal) {
+  const inline = readImages(model.get("images"));
+  const source = model.get("source");
+  const images = inline.length || !source
+    ? inline
+    : await loadSource(source, model.get("key") || "gallery", signal);
+  const limit = Number(model.get("limit")) || 0;
+  return limit > 0 ? images.slice(0, limit) : images;
 }
 
 function buildSlide(image, label) {
@@ -341,28 +386,55 @@ function buildSlide(image, label) {
 
 export default {
   async render({model, el}) {
-    const images = readImages(model.get("images"));
+    const captionOnHover = model.get("caption_on_hover") ?? true;
+
+    const {root, dispose} = createRoot(el, {
+      className: `carousel${captionOnHover ? " caption-on-hover" : ""}`,
+      css: CSS
+    });
+
+    const controller = new AbortController();
+    let disposed = false;
+    let teardown = () => {};
+
+    // The list may come from a file, so the build-out is deferred rather than
+    // awaited: returning the cleanup function promptly is what lets an unmount
+    // abort a fetch that is still in flight.
+    (async () => {
+      let images;
+      try {
+        images = await resolveImages(model, controller.signal);
+      } catch (error) {
+        if (disposed || error.name === "AbortError") return;
+        console.error("image-carousel:", error);
+        showError(root, `Could not load the photo list. ${error.message}`);
+        return;
+      }
+      if (disposed || !images.length) return;
+      teardown = build(root, images, model);
+    })();
+
+    return () => {
+      disposed = true;
+      controller.abort();
+      teardown();
+      dispose();
+    };
+  }
+};
+
+function build(root, images, model) {
     const heightRatio = Number(model.get("height_ratio") ?? 0.6) || 0.6;
     const borderRadius = model.get("border_radius") || "0";
-    const captionOnHover = model.get("caption_on_hover") ?? true;
     const type = model.get("type") || "loop";
     const wantArrows = (model.get("arrows") ?? true) && images.length > 1;
     const wantDots = (model.get("pagination") ?? true) && images.length > 1;
     const autoplayRaw = model.get("autoplay") ?? false;
     const autoplayMs = autoplayRaw === true ? 4000 : Number(autoplayRaw) || 0;
 
-    const classes = [
-      "carousel",
-      captionOnHover ? "caption-on-hover" : "",
-      wantDots ? "has-dots" : ""
-    ].filter(Boolean).join(" ");
-
-    const {root, dispose} = createRoot(el, {className: classes, css: CSS});
-
-    if (!images.length) {
-      root.textContent = "";
-      return () => dispose();
-    }
+    // The caption bar only has to clear the dots when there are dots, and that
+    // is not known until the photographs are in hand.
+    if (wantDots) root.classList.add("has-dots");
 
     // A loop needs a copy of the last slide before the first and of the first
     // after the last, so a wrap can be animated in the direction it was asked
@@ -569,7 +641,6 @@ export default {
     return () => {
       stopAutoplay();
       resize.disconnect();
-      dispose();
+      viewport.remove();
     };
-  }
-};
+}

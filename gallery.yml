@@ -1,0 +1,32 @@
+# Photographs for the gallery page and the carousel on the home page.
+#
+# Read at runtime by the image-gallery and image-carousel widgets, which fetch
+# this file from https://curiousbeams.github.io/gallery.yml. Newest first: the
+# home page shows the first few, the gallery page shows all of them.
+#
+# `src` is relative to this file, the same way news.yml writes its image paths.
+#
+# Two photographs in images/gallery/ are not listed yet because they have no
+# caption: 20251112_imphys-science-day.jpeg and 20260219_bep-mep-market.jpeg.
+
+gallery:
+  - src: ./images/gallery/20260507_pico-triple-point.jpeg
+    caption: PICO 2026, tri-country point hike.
+
+  - src: ./images/gallery/20260427_mrs-dinner.jpg
+    caption: MRS 2026, dinner with friends.
+
+  - src: ./images/gallery/20260417_miller-symposium.jpg
+    caption: 2026 Miller symposium, opening reception.
+
+  - src: ./images/gallery/20260416_george-craig-acers.jpeg
+    caption: ACerS 2026, with mentor W Craig Carter.
+
+  - src: ./images/gallery/20260120_nwo-physics.jpeg
+    caption: NWO Physics photobooth with ImPhys MInT.
+
+  - src: ./images/gallery/20251219_mathijs-bep.jpeg
+    caption: Mathijs during his BEP defense.
+
+  - src: ./images/gallery/20251215_holiday-dinner.jpeg
+    caption: Willem wins inaugural CBL Hitster game.
