@@ -2,19 +2,34 @@
 
 import {Runtime, Inspector} from "https://cdn.jsdelivr.net/npm/@observablehq/runtime@5/dist/runtime.js";
 
-// Load the Observable Runtime CSS
-const link = document.createElement('link');
-link.rel = 'stylesheet';
-link.href = 'https://cdn.jsdelivr.net/npm/@observablehq/inspector@5/dist/inspector.css';
-document.head.appendChild(link);
+const INSPECTOR_CSS = "https://cdn.jsdelivr.net/npm/@observablehq/inspector@5/dist/inspector.css";
+
+// The inspector's stylesheet has to go inside `el`, not into document.head: the
+// {anywidget} renderer always mounts the widget in a shadow root, and a shadow
+// tree does not see the document's stylesheets. Injecting it per render rather
+// than once at module load is also what makes it arrive at all — the module is
+// evaluated once and shared by every widget on the page.
+function addInspectorStyles(el) {
+  const link = document.createElement('link');
+  link.rel = 'stylesheet';
+  link.href = INSPECTOR_CSS;
+  el.appendChild(link);
+  return link;
+}
+
+/** An error the reader can see, rather than an empty gap in the page. */
+function errorNote(message) {
+  const p = document.createElement('p');
+  p.style.color = 'var(--myst-color-error, #b91c1c)';
+  p.style.font = '13px ui-monospace, Menlo, Consolas, monospace';
+  p.textContent = message;
+  return p;
+}
 
 export default {
-  async initialize({ model }) {
-    return () => {};
-  },
-
   async render({ model, el }) {
-    
+    const styles = addInspectorStyles(el);
+
     // Get parameters from the model
     const notebookUrl = model.get("notebook");
     const cells = model.get("cells"); // Optional: specific cells to render
@@ -24,8 +39,8 @@ export default {
     const width = model.get("width");
     
     if (!notebookUrl) {
-      el.innerHTML = '<p style="color: red;">Error: No notebook URL provided</p>';
-      return () => {};
+      el.appendChild(errorNote('No notebook URL provided.'));
+      return () => styles.remove();
     }
 
     // Create container for the notebook
@@ -119,6 +134,8 @@ export default {
         return () => {
           resizeObserver.disconnect();
           originalCleanup();
+          container.remove();
+          styles.remove();
         };
       } else {
         // Render entire notebook
@@ -126,13 +143,18 @@ export default {
         
         return () => {
           runtime.dispose();
+          container.remove();
+          styles.remove();
         };
       }
             
     } catch (error) {
       console.error('Error loading Observable notebook:', error);
-      el.innerHTML = `<p style="color: red;">Error loading notebook: ${error.message}</p>`;
-      return () => {};
+      container.appendChild(errorNote(`Error loading notebook: ${error.message}`));
+      return () => {
+        container.remove();
+        styles.remove();
+      };
     }
   }
 };

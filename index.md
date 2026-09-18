@@ -17,7 +17,7 @@ Welcome to the *Curious Beams Lab* -- where we use electron beams and advanced a
 :::
 
 We’re part of the [Imaging Physics Department](https://www.tudelft.nl/tnw/over-faculteit/afdelingen/imphys/) at *Delft University of Technology*, and our research lies at the intersection of physics, computation, and materials science.
-Our goal is to make high-resolution electron microscopy robust and accessible -- combining modeling, simulation, and instrumentation to reveal how materials behave, atom by atom.
+Our goal is to make high-resolution electron microscopy robust and accessible -- combining modeling, simulation, and instrumentation to reveal how materials behave.
 
 :::{div .text-center}
 
@@ -116,7 +116,7 @@ Our goal is to make high-resolution electron microscopy robust and accessible --
 
 :::
 
-:::{any:bundle} https://curiousbeams.github.io/esm-widgets/image-carousel.js
+:::{anywidget} https://curiousbeams.github.io/esm-widgets/image-carousel.js
 {
   "images": [
     {

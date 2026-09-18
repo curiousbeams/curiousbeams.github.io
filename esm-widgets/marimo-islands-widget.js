@@ -6,6 +6,14 @@
  *
  * ⚠️  One marimo notebook per page — multiple instances will conflict.
  *
+ * ⚠️  Embed this one with {any:bundle} and NO :css: option, which is the only
+ *     combination that leaves it in the light DOM. Unlike the other widgets in
+ *     this folder it cannot move to {anywidget}: the marimo islands runtime is a
+ *     global script that needs its <marimo-filename> element and its stylesheet
+ *     in document.head, and it hydrates the <marimo-island> elements it finds by
+ *     searching the document — none of which reaches into a shadow root. The
+ *     cost is that it cannot be previewed locally, only once deployed.
+ *
  * Model properties:
  *   url           {string}  Required. URL of the remote .py marimo notebook.
  *   version       {string}  Optional. Overrides auto-detected version.

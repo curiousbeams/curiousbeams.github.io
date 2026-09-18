@@ -2,7 +2,7 @@
 title: Gallery
 ---
 
-:::{any:bundle} https://curiousbeams.github.io/esm-widgets/image-carousel.js
+:::{anywidget} https://curiousbeams.github.io/esm-widgets/image-carousel.js
 {
   "images": [
     {
