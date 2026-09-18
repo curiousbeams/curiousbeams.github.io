@@ -21,6 +21,20 @@ Our goal is to make high-resolution electron microscopy robust and accessible --
 
 :::{div .text-center}
 
+**Our Research Interests**
+
+:::
+
+:::{anywidget} https://curiousbeams.github.io/em-widgets/observable-notebook.mjs
+{
+  // the body is JSON5 — comments and unquoted keys are fine
+  notebook: "https://curiousbeams.github.io/em-widgets/notebooks/research-overview.html",
+  cells: ["overviewView"],
+}
+:::
+
+:::{div .text-center}
+
 **Recent Interactive Content**
 
 :::
