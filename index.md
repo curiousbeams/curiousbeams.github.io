@@ -120,7 +120,7 @@ Our goal is to make high-resolution electron microscopy robust and accessible --
 {
   // the four most recent photographs from gallery.yml; the full set is on /gallery
   "source": "https://curiousbeams.github.io/gallery.yml",
-  "limit": 4,
+  "limit": 9,
   "height_ratio": 0.4,
   "border_radius": "0.5rem",
   "caption_on_hover": true
