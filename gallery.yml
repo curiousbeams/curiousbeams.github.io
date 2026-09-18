@@ -1,32 +1,44 @@
 # Photographs for the gallery page and the carousel on the home page.
 #
 # Read at runtime by the image-gallery and image-carousel widgets, which fetch
-# this file from https://curiousbeams.github.io/gallery.yml. Newest first: the
-# home page shows the first few, the gallery page shows all of them.
-#
-# `src` is relative to this file, the same way news.yml writes its image paths.
-#
-# Two photographs in images/gallery/ are not listed yet because they have no
-# caption: 20251112_imphys-science-day.jpeg and 20260219_bep-mep-market.jpeg.
+# this file from https://curiousbeams.github.io/gallery.yml.
 
 gallery:
-  - src: ./images/gallery/20260507_pico-triple-point.jpeg
+  - src: ./images/gallery/imc-group-photobooth.webp
+    caption: IMC21 2026, in the photobooth.
+
+  - src: ./images/gallery/imc-group-dinner.webp
+    caption: IMC21 2026, lab dinner in Liverpool.
+
+  - src: ./images/gallery/imc-willem-poster.webp
+    caption: IMC21 2026, Willem and Mathijs present posters.
+
+  - src: ./images/gallery/imc-mathijs-poster.webp
+    caption: IMC21 2026, Mathijs at his poster.
+
+  - src: ./images/gallery/iucr-colin.webp
+    caption: IUCr 2026, hiking with Colin in Banff.
+
+  - src: ./images/gallery/20260507_pico-triple-point.webp
     caption: PICO 2026, tri-country point hike.
 
-  - src: ./images/gallery/20260427_mrs-dinner.jpg
+  - src: ./images/gallery/20260427_mrs-dinner.webp
     caption: MRS 2026, dinner with friends.
 
-  - src: ./images/gallery/20260417_miller-symposium.jpg
+  - src: ./images/gallery/20260417_miller-symposium.webp
     caption: 2026 Miller symposium, opening reception.
 
-  - src: ./images/gallery/20260416_george-craig-acers.jpeg
+  - src: ./images/gallery/20260416_george-craig-acers.webp
     caption: ACerS 2026, with mentor W Craig Carter.
 
-  - src: ./images/gallery/20260120_nwo-physics.jpeg
+  - src: ./images/gallery/20260219_bep-mep-market.webp
+    caption: BEP/MEP market 2026, our stand and the Fourier Atlas kit.
+
+  - src: ./images/gallery/20260120_nwo-physics.webp
     caption: NWO Physics photobooth with ImPhys MInT.
 
-  - src: ./images/gallery/20251219_mathijs-bep.jpeg
+  - src: ./images/gallery/20251219_mathijs-bep.webp
     caption: Mathijs during his BEP defense.
 
-  - src: ./images/gallery/20251215_holiday-dinner.jpeg
+  - src: ./images/gallery/20251215_holiday-dinner.webp
     caption: Willem wins inaugural CBL Hitster game.

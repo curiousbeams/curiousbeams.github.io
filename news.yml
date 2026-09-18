@@ -1,31 +1,77 @@
 news:
-  - title: MRS Bulletin review paper 
-    date: "Jun 2026"
-    image: ./images/gallery/mrs_bulletin_fig.webp
-    url: https://doi.org/10.1557/s43577-026-01100-3
+  - title: CBL awarded ERC Starting Grant
+    date: "Sep 2026"
+    image: ./images/news/erc-logo.webp
+    url: https://www.tudelft.nl/en/2026/tu-delft/five-tu-delft-researchers-receive-erc-starting-grants
     description: |
-      Review paper out in MRS Bulletin (Special Issue on Mathematical Solutions for Materials Science): The ABCs of phase retrieval: Connecting the acronyms of scanning transmission electron microscopy.
+      The Curious Beams Lab was awarded a five-year ERC Starting Grant for the BEAMSurf project, on diffractive atomic-scale surface imaging with backscattered electrons.
+    tags:
+      - grants
+  - title: New arXiv preprint
+    date: "Sep 2026"
+    image: ./images/news/nanobeam-ptycho-paper.webp
+    url: https://arxiv.org/abs/2608.30359
+    description: |
+      A new preprint from the lab is on arXiv: Real-space overlap is not enough: Ambiguity in nanobeam iterative ptychography.
     tags:
       - publications
-  - title: Two papers out in M&M 
-    date: "Apr 2026"
-    image: ./images/gallery/mam_32_2cover.jpeg
-    url: https://academic.oup.com/mam/issue/32/2#2517450-8664875
-    description: |
-      Two new papers out in Microscopy & Microanalysis: Relaxing Direct Ptychography Sampling Requirements via Parallax Imaging Insights & Beyond Contrast Transfer: SSNR as a Finite-Dose Metric for STEM Phase Retrieval.
-    tags:
-      - publications
-  - title: George's US conference tour 
-    date: "Apr 2026"
-    image: ./images/gallery/mrs2026-best-oral-presentation.png
+  - title: CBL attends IMC21
+    date: "Sep 2026"
+    image: ./images/news/imc-posters.webp
     url: https://cbl.curve.space/articles/curious-beams-presentation-20260428-magnetic-diffactive-imaging
     description: |
-      George represents the Curious Beams Lab at spring conferences: ACerS spring 2026 in Bellevue, WA; the 2026 annual Miller symposium in Santa Cruz, CA; MRS spring 2026 in Honolulu, HI; and PICO 2026 in Vaals, NL.
+      The inaugural members of the Curious Beams Lab attended the 21st International Microscopy Congress (IMC21) in Liverpool, UK, where Willem and Mathijs each presented a poster.
     tags:
       - conferences
-  - title: CBL attends BEP/MEP market  
+  - title: Stijn starts his BEP
+    date: "Sep 2026"
+    image: ./images/banners/cbl-logo.svg
+    description: |
+      Stijn began his Bachelor’s thesis at the Curious Beams Lab, developing open-source electron ray-tracing software.
+    tags:
+      - personnel
+  - title: Ruben starts his MEP
+    date: "Sep 2026"
+    image: ./images/banners/cbl-logo.svg
+    description: |
+      Ruben began his Master’s thesis at the Curious Beams Lab, developing a digital twin of the Helios FX microscope and investigating its counterpole configuration.
+    tags:
+      - personnel
+  - title: George awarded NWO Veni
+    date: "Jul 2026"
+    image: ./images/news/nwo-logo.webp
+    url: https://www.tudelft.nl/2026/tnw/nwo-veni-grant-for-georgios-varnavides-to-reveal-hidden-magnetism-at-the-atomic-scale
+    description: |
+      George was awarded an NWO Veni grant to reveal hidden magnetism at the atomic scale.
+    tags:
+      - grants
+  - title: MRS Bulletin review paper
+    date: "Jun 2026"
+    image: ./images/news/mrs-bulletin-fig.webp
+    url: https://doi.org/10.1557/s43577-026-01100-3
+    description: |
+      A review paper appeared in the MRS Bulletin special issue on Mathematical Solutions for Materials Science: The ABCs of phase retrieval: Connecting the acronyms of scanning transmission electron microscopy.
+    tags:
+      - publications
+  - title: Two papers out in M&M
+    date: "Apr 2026"
+    image: ./images/news/mam-32-2-cover.webp
+    url: https://academic.oup.com/mam/issue/32/2#2517450-8664875
+    description: |
+      Two papers appeared in Microscopy & Microanalysis: Relaxing direct ptychography sampling requirements via parallax imaging insights, and Beyond contrast transfer: Spectral SNR as a finite-dose metric for STEM phase retrieval.
+    tags:
+      - publications
+  - title: George’s US conference tour
+    date: "Apr 2026"
+    image: ./images/news/mrs2026-best-oral-presentation.webp
+    url: https://cbl.curve.space/articles/curious-beams-presentation-20260428-magnetic-diffactive-imaging
+    description: |
+      George represented the Curious Beams Lab at the spring conferences: ACerS spring 2026 in Bellevue, WA; the 2026 annual Miller symposium in Santa Cruz, CA; MRS spring 2026 in Honolulu, HI; and PICO 2026 in Vaals, NL.
+    tags:
+      - conferences
+  - title: CBL attends BEP/MEP market
     date: "19 Feb 2026"
-    image: ./images/gallery/20260219_bep-mep-market.jpeg
+    image: ./images/gallery/20260219_bep-mep-market.webp
     description: |
       George and Willem represented the Curious Beams Lab at the Applied Physics BEP/MEP market, meeting prospective students and demoing the Fourier Atlas kit as a physical analogue of the Fourier transform.
     tags:
@@ -33,35 +79,34 @@ news:
   - title: University of Vienna Seminar
     url: https://cbl.curve.space/articles/curious-beams-presentation-20260210-direct-ptychography
     date: "10 Feb 2026"
-    image: ./images/gallery/presentation-placeholder_streaming-parallax.png
+    image: ./images/news/streaming-parallax.webp
     description: |
       George gave a seminar at the University of Vienna’s Physics of Nanostructured Materials group on streaming parallax methods, with time to sample Viennese cuisine and a Soda-Zitron.
     tags:
       - presentations
-  - title: CBL attends NWO Physics  
+  - title: CBL attends NWO Physics
     date: "20 Jan 2026"
-    image: ./images/gallery/20260120_nwo-physics.jpeg
+    image: ./images/gallery/20260120_nwo-physics.webp
     description: |
       George attended the NWO Physics conference in Veldhoven, featuring a science-communicator moderator and a lively PI discussion on the values shaping our research community.
     tags:
       - activities
   - title: Mathijs defends his BEP
-    url: https://www.linkedin.com/posts/gvarnavides_congratulations-to-mathijs-van-den-doel-on-activity-7412161884210032640-wXtw
+    url: https://curiousbeams.github.io/bep-thesis-mathijs-ms-algos/
     date: "19 Dec 2025"
-    image: ./images/gallery/20251219_mathijs-bep.jpeg
+    image: ./images/gallery/20251219_mathijs-bep.webp
     description: |
-      Mathijs successfully defended his Bachelor’s thesis with excellent results and will continue with the Curious Beams Lab this spring as a research assistant.
+      Mathijs successfully defended his Bachelor’s thesis with excellent results and will continue with the Curious Beams Lab in spring 2026 as a research assistant.
     tags:
       - personnel
-  - title: Inaugural CBL holiday dinner  
+  - title: Inaugural CBL holiday dinner
     date: "15 Dec 2025"
-    image: ./images/gallery/20251215_holiday-dinner.jpeg
+    image: ./images/gallery/20251215_holiday-dinner.webp
     description: |
-      We hosted the first Curious Beams Lab holiday dinner, closing the year with good food, lively discussion, and a spirited game of Hitster -- won by Willem after a remarkable comeback.
+      We hosted the first Curious Beams Lab holiday dinner, closing the year with good food, lively discussion, and a spirited game of Hitster — won by Willem after a remarkable comeback.
     tags:
       - activities
   - title: Willem starts his PhD
-    url: https://www.tudelft.nl/2025/tnw/willem-de-kleijne-joined-imphys-as-phd-student
     date: "17 Nov 2025"
     image: ./images/banners/cbl-logo.svg
     description: |
@@ -71,14 +116,14 @@ news:
   - title: ImPhys Science Day
     url: https://www.tudelft.nl/2025/tnw/imphys-science-day-2025
     date: "12 Nov 2025"
-    image: ./images/gallery/20251112_imphys-science-day.jpeg
+    image: ./images/gallery/20251112_imphys-science-day.webp
     description: |
       George presented seminars at FAU Erlangen and ImPhys Science Day 2025 on dose-efficient diffractive electron imaging and new directions in low-dose phase retrieval.
     tags:
       - presentations
-  - title: CBL attends Nemi Day  
+  - title: CBL attends Nemi Day
     date: "27 Oct 2025"
-    image: ./images/gallery/presentation-placeholder_ssnr-summary.png
+    image: ./images/news/ssnr-summary.webp
     url: https://gvarnavides.com/2025nemi-day/
     description: |
       George presented at the Dutch Microscopy Days in Groningen on information transfer in phase-contrast imaging, the technique first discovered by Groningen Nobel Laureate Fritz Zernike.
@@ -86,7 +131,6 @@ news:
       - activities
       - presentations
   - title: Mathijs starts his BEP
-    url: https://cbl.curve.space/articles/curious-beams-presentation-20260210-direct-ptychography/higher-order-ms
     date: "13 Oct 2025"
     image: ./images/banners/cbl-logo.svg
     description: |
