@@ -32,16 +32,15 @@ Please contact Georgios directly to explore current topics.
 :reverse:
 
 Georgios is Assistant Professor of Imaging Physics at Delft University of Technology, where he leads the Curious Beams Lab.
-He is a lead developer of the widely used open-source electron microscopy analysis packages [py4DSTEM](https://github.com/py4dstem/py4DSTEM) and [quantEM](https://github.com/electronmicroscopy/quantem), and serves as co-editor of [Elemental Microscopy](https://www.elementalmicroscopy.org/), a new open-access, open-science journal dedicated to interactive and reproducible scientific communication in microscopy. 
+He is a lead developer of the widely used open-source electron microscopy analysis packages [py4DSTEM](https://github.com/py4dstem/py4DSTEM) and [quantEM](https://github.com/electronmicroscopy/quantem), and serves as co-editor of [Elemental Microscopy](https://www.elementalmicroscopy.org/), a new open-access, open-science journal dedicated to interactive and reproducible scientific communication in microscopy.
 Before joining TU Delft, he was a Miller Research Fellow at the University of California, Berkeley.
 
 ---
 Selected Works:
 
-- [Relaxing direct ptychography sampling requirements via parallax imaging insights](https://doi.org/10.48550/arXiv.2507.18610)
-- [Evaluating the Transfer of Information in Phase Retrieval STEM Techniques](https://doi.org/10.69761/ehch7395)
-- [Low-dose cryo-electron ptychography of proteins at sub-nanometer resolution](https://doi.org/10.1038/s41467-024-52403-5)
-- [Direct imaging and electronic structure modulation of moiré superlattices at the 2D/3D interface](https://doi.org/10.1038/s41467-021-21363-5)
+- [The ABCs of phase retrieval: Connecting the acronyms of scanning transmission electron microscopy](https://doi.org/10.1557/s43577-026-01100-3)
+- [Relaxing direct ptychography sampling requirements via parallax imaging insights](https://doi.org/10.1093/mam/ozaf139)
+- [Evaluating the transfer of information in phase retrieval STEM techniques](https://doi.org/10.69761/ehch7395)
 :::
 
 :::{person}
@@ -68,16 +67,18 @@ Selected Works:
 :orcid: 0009-0009-9635-8763
 :reverse:
 
-Willem began his PhD in November 2025.
-Last year, he earned a Master’s in Econometrics from Tilburg University, and earlier this year, he completed a Master’s in Applied Physics at Eindhoven University of Technology.
-Choosing between these fields was not easy, but during his internship at ASML’s Research Department, Willem discovered his passion for imaging techniques—a perfect intersection of his interests in mathematics and physics.
+Willem started his PhD in November 2025.
+He earned a Master’s in Econometrics from Tilburg University, followed by a Master’s in Applied Physics at Eindhoven University of Technology.
+Choosing between these fields was not easy, but during his internship at ASML’s Research Department, Willem discovered his passion for imaging techniques — a perfect intersection of his interests in mathematics and physics.
 That experience also inspired his curiosity and ambition to pursue a career in research.
 
 ---
 Selected Works:
 
-- [Zero-field deterministic all-optical writing and annihilation of nanometer-scale skyrmion bubbles](https://doi.org/10.48550/arXiv.2512.19266)
+- [Real-space overlap is not enough: Ambiguity in nanobeam iterative ptychography](https://doi.org/10.48550/arXiv.2608.30359)
+- [Nanobeam ptychography ambiguities](https://cbl.curve.space/articles/curious-beams-widget-20260827-nanobeam-ptychography)
 :::
+
 
 :::{person}
 :name: Mathijs J.J. van den Doel
@@ -95,7 +96,34 @@ He is currently working on applying the principle of reciprocity to simulate par
 ---
 Selected Works:
 
-- [Higher order realspace multislice operators](https://github.com/abTEM/abTEM/pull/236)
+- [Implementation of more accurate multislice algorithms for low energy TEM](https://curiousbeams.github.io/bep-thesis-mathijs-ms-algos/)
+:::
+
+:::{person}
+:name: Ruben Timmermans
+:position: Postgraduate Researcher
+:pronouns: he/him
+:image: /images/team/RubenTimmermans.webp
+:github: RVTimmermans
+:email: r.v.timmermans@student.tudelft.nl
+:linkedin: ruben-timmermans-36892a311
+:reverse:
+
+Ruben started his Master End Project (MEP) in the Curious Beams Lab in September 2026, focusing on designing and calibrating a digital twin of the new Helios FX microscope: building a CAD model, simulating the magnetic fields with finite-element analysis, and ray-tracing charged particles.
+:::
+
+:::{person}
+:name: Stijn T.J. Kempen
+:position: Undergraduate Researcher
+:pronouns: he/him
+:image: /images/team/StijnKempen.webp
+:github: stjkempen-arch
+:email: s.t.j.kempen@student.tudelft.nl
+:linkedin: stijn-kempen-6329543b1
+:reverse:
+
+Stijn started his applied physics Bachelor End Project (BEP) in the Curious Beams Lab in September 2026, focusing on characterizing electromagnetic lenses using numerical ray-tracing methods.
+His aim is to develop open-source differentiable software for determining higher-order aberration coefficients and predicting electron paths in both electrostatic and magnetic lenses.
 :::
 
 :::{person}
@@ -105,7 +133,7 @@ Selected Works:
 :image: /images/team/JianyaoJin.webp
 :github: jianyaojin
 :email: j.jin-1@tudelft.nl
-:linkedin: jianyao-j-7349b4116/
+:linkedin: jianyao-j-7349b4116
 :orcid: 0000-0003-4428-8344
 :reverse:
 
@@ -123,6 +151,6 @@ Jianyao has a background in applied physics, with a focus on computational physi
 :reverse:
 
 Hans started his PhD in June 2024, focusing on modeling charging effects in our Monte Carlo electron–matter simulator, Nebula.
-His main goal is to produce more reliable simulated SEM images while gaining deeper insight into the underlying physics. 
+His main goal is to produce more reliable simulated SEM images while gaining deeper insight into the underlying physics.
 This, in turn, enables more accurate interpretation of real SEM images and can be directly applied to improve SEM inspection and metrology.
 :::
