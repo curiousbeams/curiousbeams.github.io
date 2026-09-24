@@ -6,11 +6,6 @@ label: functional-imaging
 
 In addition to the electrostatic structure of materials, we are interested in measuring the functional properties of dose-sensitive specimens, such as electric and magnetic fields at high resolution, how a surface has rearranged itself, and biological structure in three dimensions.
 
-:::{warning} _Under construction_
-This page is left as an exercise for the reader.
-If successful, publish! [@feynman1972statistical]
-:::
-
 (surface-diffraction)=
 ## Surface diffractive imaging
 

@@ -31,6 +31,11 @@ Press **scan** to raster the probe across the field and fill the four signal pan
 
 Each of our three research directions has its own page:
 
-- [Electron microscopy method development](./research-em-method-dev.md): where the phase information lives in a 4D-STEM measurement, and how direct and iterative ptychography recover it.
-- [Electron optics instrumentation](./research-electron-optics.md): the column, lenses and aberrations that form the probe.
-- [Functional imaging of materials and surfaces](./research-functional-imaging.md): surface reconstructions, antiferromagnetic order, and biological structure in three dimensions.
+- [Electron microscopy method development](./research-em-method-dev.md): developing novel algorithms to extract phase information from diffractive measurements efficiently.
+- [Electron optics instrumentation](./research-electron-optics.md): pushing the limits of probe-forming electron-optical components.
+- [Functional imaging of materials and surfaces](./research-functional-imaging.md): investigating surface reconstructions, antiferromagnetic order, and biological structure in three dimensions.
+
+:::{warning} _Under construction_
+The following pages are left as an exercise for the reader.
+If successful, publish! [@feynman1972statistical]
+:::
