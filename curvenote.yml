@@ -11,6 +11,10 @@ project:
     - file: index.md
     - file: team.md
     - file: research.md
+      children:
+        - file: research-em-method-dev.md
+        - file: research-electron-optics.md
+        - file: research-functional-imaging.md
     - file: publications.md
     - file: open-science.md
     - file: interactive-content.md
@@ -22,7 +26,15 @@ site:
     - title: Team
       url: /team
     - title: Research
-      url: /research
+      children:
+        - title: Overview
+          url: /research
+        - title: EM Method Development
+          url: /research-em-method-dev
+        - title: Electron Optics
+          url: /research-electron-optics
+        - title: Functional Imaging
+          url: /research-functional-imaging
     - title: Publications
       url: /publications
     - title: Open Science

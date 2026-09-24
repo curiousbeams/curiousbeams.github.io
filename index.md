@@ -30,6 +30,15 @@ Our goal is to make high-resolution electron microscopy robust and accessible --
   // the body is JSON5 — comments and unquoted keys are fine
   notebook: "https://curiousbeams.github.io/em-widgets/notebooks/research-overview.html",
   cells: ["overviewView"],
+  // One page per research direction. The notebook's own defaults point at
+  // anchors on a single research page, which no longer exist.
+  params: {
+    links: {
+      methods: "/research-em-method-dev",
+      optics: "/research-electron-optics",
+      imaging: "/research-functional-imaging",
+    },
+  },
 }
 :::
 
