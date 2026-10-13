@@ -9,7 +9,7 @@ title: Team
 <!-- Formal PhD and Postdoctoral vacancies are listed on the TU Delft Careers portal and will be advertised here. -->
 
 We currently have three vacancies open, related to our recent [ERC StG project BEAMSurf](https://www.tudelft.nl/en/2026/tu-delft/five-tu-delft-researchers-receive-erc-starting-grants):
-- 3-year [postdoctoral position in electron optics and instrumentation](https://careers.tudelft.nl/job/Delft-Postdoc-Electron-Optics-and-Instrumentation-2628-CD/1374410057/)
+- 2.5-year [postdoctoral position in electron optics and instrumentation](https://careers.tudelft.nl/job/Delft-Postdoc-Electron-Optics-and-Instrumentation-2628-CD/1374410057/)
 - Two 4-year [PhD positions in diffractive electron imaging of surfaces](https://careers.tudelft.nl/job/Delft-PhD-Position%28s%29-Diffractive-Electron-Imaging-of-Surfaces-2628-CD/1374410357/)
 
 **Fellowships:** We are always interested in supporting and hosting fellowship applications (e.g., MSCA Postdoctoral Fellowships) for motivated candidates.
